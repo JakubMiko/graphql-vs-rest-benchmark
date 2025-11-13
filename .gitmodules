@@ -1,0 +1,6 @@
+[submodule "apps/EventREST"]
+	path = apps/EventREST
+	url = git@github.com:JakubMiko/EventREST.git
+[submodule "apps/EventQL"]
+	path = apps/EventQL
+	url = git@github.com:JakubMiko/EventQL.git
