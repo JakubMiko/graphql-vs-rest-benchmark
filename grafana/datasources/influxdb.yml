@@ -1,0 +1,19 @@
+# Grafana Datasource Configuration for InfluxDB
+# This file is automatically loaded by Grafana on startup
+
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB-K6
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    jsonData:
+      version: Flux
+      organization: benchmark
+      defaultBucket: k6
+      tlsSkipVerify: true
+    secureJsonData:
+      token: benchmark-admin-token-change-in-production
+    isDefault: true
+    editable: true
