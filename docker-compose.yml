@@ -1,8 +1,8 @@
 services:
   # GraphQL Application
-  eventql-graphql:
+  eventql:
     build: ./apps/EventQL
-    container_name: eventql-graphql
+    container_name: eventql
     ports:
       - "3000:3000"
     environment:
@@ -35,9 +35,9 @@ services:
     restart: unless-stopped
 
   # REST Application
-  eventql-rest:
+  event-rest:
     build: ./apps/EventREST
-    container_name: eventql-rest
+    container_name: event-rest
     ports:
       - "3001:3000"
     environment:
