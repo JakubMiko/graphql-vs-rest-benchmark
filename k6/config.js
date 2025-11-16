@@ -2,16 +2,16 @@
 // Shared configuration for all k6 tests
 
 export const API_ENDPOINTS = {
-  graphql: 'http://eventql-graphql:3000/graphql',
-  rest: 'http://eventql-rest:3000/api/v1',
+  graphql: 'http://eventql:3000/graphql',
+  rest: 'http://event-rest:3000/api/v1',
 };
 
 // Test stage configurations
 export const TEST_STAGES = {
   load: [
-    { duration: '1m', target: 10 },   // Warm up
-    { duration: '3m', target: 50 },   // Normal load
-    { duration: '1m', target: 0 },    // Cool down
+    { duration: '1m', target: 50 },   // Ramp up to 50 VUs
+    { duration: '3m', target: 50 },   // Hold at 50 VUs (plateau)
+    { duration: '1m', target: 0 },    // Ramp down
   ],
 
   stress: [

@@ -21,15 +21,15 @@ export const options = {
   },
 };
 
-// GraphQL query for fetching a single user
+// GraphQL query for fetching a single user (public endpoint, no auth required)
 const QUERY = `
-  query GetUser($id: ID!) {
-    user(id: $id) {
+  query GetPublicUser($id: ID!) {
+    publicUser(id: $id) {
       id
       email
       firstName
       lastName
-      admin
+      createdAt
     }
   }
 `;
@@ -51,7 +51,7 @@ export default function () {
 // Setup function (runs once at the start)
 export function setup() {
   console.log('Starting Scenario 1: Simple Read - GraphQL Load Test');
-  console.log('Testing: GET single user by ID (no nested relations)');
+  console.log('Testing: publicUser query (no auth, no nested relations)');
   console.log('Target: 50 VUs for 3 minutes');
   return {};
 }

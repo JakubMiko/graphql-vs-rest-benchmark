@@ -25,8 +25,8 @@ export default function () {
   // Random user ID (we have 10,000 users seeded)
   const userId = randomInt(1, 10000);
 
-  // Execute GET request
-  const response = restRequest('GET', `/users/${userId}`);
+  // Execute GET request (public endpoint, no auth required)
+  const response = restRequest('GET', `/users/public/${userId}`);
 
   // Validate response
   checkResponse(response, 200, 'user fetched successfully');
@@ -38,7 +38,7 @@ export default function () {
 // Setup function (runs once at the start)
 export function setup() {
   console.log('Starting Scenario 1: Simple Read - REST Load Test');
-  console.log('Testing: GET single user by ID (no nested relations)');
+  console.log('Testing: GET /users/public/:id (no auth, no nested relations)');
   console.log('Target: 50 VUs for 3 minutes');
   return {};
 }

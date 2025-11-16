@@ -40,14 +40,13 @@ echo ""
 # Get absolute path to k6 directory
 K6_DIR="$(cd "$(dirname "$0")/.." && pwd)/k6"
 
-# Use custom k6 with InfluxDB v2 support
+# Use custom k6 image with InfluxDB v2 support
 docker run --rm -i \
   --network=graphql-vs-rest-benchmark_benchmark \
   -v "$K6_DIR:/k6" \
   -e K6_INFLUXDB_ORGANIZATION=$INFLUX_ORG \
   -e K6_INFLUXDB_BUCKET=$INFLUX_BUCKET \
   -e K6_INFLUXDB_TOKEN=$INFLUX_TOKEN \
-  -e K6_INFLUXDB_INSECURE=true \
   custom-k6:latest run \
   --out xk6-influxdb=$INFLUX_URL \
   --tag api=$API \
