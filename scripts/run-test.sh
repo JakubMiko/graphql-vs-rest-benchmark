@@ -34,17 +34,17 @@ case $SCENARIO_NAME in
         RESULTS_FOLDER="02-nested-data"
         ;;
     selective-fields)
-        SCENARIO_FOLDER="04-selective-fields"
+        SCENARIO_FOLDER="03-selective-fields"
         SCENARIO_NUM="03"
         RESULTS_FOLDER="03-selective-fields"
         ;;
     write-operations)
-        SCENARIO_FOLDER="05-write-operations"
+        SCENARIO_FOLDER="04-write-operations"
         SCENARIO_NUM="04"
         RESULTS_FOLDER="04-write-operations"
         ;;
     concurrent-users)
-        SCENARIO_FOLDER="07-concurrent-users"
+        SCENARIO_FOLDER="05-concurrent-users"
         SCENARIO_NUM="05"
         RESULTS_FOLDER="05-concurrent-users"
         ;;

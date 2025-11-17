@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     write-operations
+Test Type:    load
+API:          graphql
+Phase:        before_optimization
+Test Script:  k6/scenarios/04-write-operations/load-graphql.js
+Timestamp:    2025-11-17 12:12:23
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-17T11:12:23Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "graphql")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "04")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=error msg="No auth token available" source=console
+time="2025-11-17T11:17:23Z" level=info msg="Scenario 5 (GraphQL) completed" source=console
+time="2025-11-17T11:17:23Z" level=info msg="Note: Use run-write-test.sh wrapper for automatic cleanup" source=console
+time="2025-11-17T11:17:23Z" level=error msg="Couldn't send metrics points" elapsed=29.038041ms error="Post \"http://influxdb:8086/api/v2/write?bucket=k6&org=benchmark&precision=ns\": dial tcp: lookup influxdb on 127.0.0.11:53: no such host" output=InfluxDBv2 points=24734
+time="2025-11-17T11:17:24Z" level=error msg="Couldn't send metrics points" elapsed=459.084667ms error="Post \"http://influxdb:8086/api/v2/write?bucket=k6&org=benchmark&precision=ns\": dial tcp: lookup influxdb on 127.0.0.11:53: no such host" output=InfluxDBv2 points=390472
+
+running (5m00.0s), 00/50 VUs, 28564229 complete and 0 interrupted iterations
+write-operations ✓ [ 100% ] 00/50 VUs  5m0s
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+    http_req_duration
+    ✓ 'p(95)<500' http_req_duration=23.23ms
+
+
+  █ TOTAL RESULTS 
+
+
+    HTTP
+    http_req_duration.......................................................: avg=23.23ms min=23.23ms med=23.23ms max=23.23ms p(90)=23.23ms p(95)=23.23ms
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=962.25µs min=962.25µs med=962.25µs max=962.25µs p(90)=962.25µs p(95)=962.25µs
+    http_req_connecting (TCP handshake).....................................: avg=199.83µs min=199.83µs med=199.83µs max=199.83µs p(90)=199.83µs p(95)=199.83µs
+    http_req_sending (request upload).......................................: avg=53.96µs min=53.96µs med=53.96µs max=53.96µs p(90)=53.96µs p(95)=53.96µs
+    http_req_waiting (server processing)....................................: avg=23.04ms min=23.04ms med=23.04ms max=23.04ms p(90)=23.04ms p(95)=23.04ms
+    http_req_receiving (response download)..................................: avg=139.46µs min=139.46µs med=139.46µs max=139.46µs p(90)=139.46µs p(95)=139.46µs
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 1
+    http_reqs...............................................................: 1  0.003333/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=418.33µs min=3.71µs med=5.38µs max=166.52ms p(90)=17.88µs p(95)=54.75µs
+    iterations..............................................................: 28564229  95206.306807/s
+    vus.....................................................................: 1      min=1          max=50
+    vus_max.................................................................: 50     min=50         max=50
+
+    NETWORK
+    data_received...........................................................: 577 B 2 B/s
+    data_sent...............................................................: 417 B 1 B/s
+
+
+============================================
+Test completed!
+============================================
+
+running (5m00.0s), 00/50 VUs, 28564229 complete and 0 interrupted iterations
+write-operations ✓ [ 100% ] 00/50 VUs  5m0s
