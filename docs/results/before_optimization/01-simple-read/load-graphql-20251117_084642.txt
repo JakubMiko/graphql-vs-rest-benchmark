@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     simple-read
+Test Type:    load
+API:          graphql
+Phase:        before_optimization
+Test Script:  k6/scenarios/01-simple-read/load-graphql.js
+Timestamp:    2025-11-17 08:46:42
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-17T07:46:42Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "graphql")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "01")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+simple-read   [  84% ] 41/50 VUs  4m12.0s/5m00.0s
+
+running (4m13.0s), 40/50 VUs, 10921 complete and 0 interrupted iterations
+simple-read   [  84% ] 40/50 VUs  4m13.0s/5m00.0s
+
+running (4m14.0s), 39/50 VUs, 10961 complete and 0 interrupted iterations
+simple-read   [  85% ] 39/50 VUs  4m14.0s/5m00.0s
+
+running (4m15.0s), 38/50 VUs, 11000 complete and 0 interrupted iterations
+simple-read   [  85% ] 38/50 VUs  4m15.0s/5m00.0s
+
+running (4m16.0s), 38/50 VUs, 11038 complete and 0 interrupted iterations
+simple-read   [  85% ] 38/50 VUs  4m16.0s/5m00.0s
+
+running (4m17.0s), 36/50 VUs, 11076 complete and 0 interrupted iterations
+simple-read   [  86% ] 36/50 VUs  4m17.0s/5m00.0s
+
+running (4m18.0s), 36/50 VUs, 11112 complete and 0 interrupted iterations
+simple-read   [  86% ] 36/50 VUs  4m18.0s/5m00.0s
+
+running (4m19.0s), 35/50 VUs, 11148 complete and 0 interrupted iterations
+simple-read   [  86% ] 35/50 VUs  4m19.0s/5m00.0s
+
+running (4m20.0s), 34/50 VUs, 11183 complete and 0 interrupted iterations
+simple-read   [  87% ] 34/50 VUs  4m20.0s/5m00.0s
+
+running (4m21.0s), 33/50 VUs, 11217 complete and 0 interrupted iterations
+simple-read   [  87% ] 33/50 VUs  4m21.0s/5m00.0s
+
+running (4m22.0s), 32/50 VUs, 11250 complete and 0 interrupted iterations
+simple-read   [  87% ] 32/50 VUs  4m22.0s/5m00.0s
+
+running (4m23.0s), 31/50 VUs, 11282 complete and 0 interrupted iterations
+simple-read   [  88% ] 31/50 VUs  4m23.0s/5m00.0s
+
+running (4m24.0s), 31/50 VUs, 11301 complete and 0 interrupted iterations
+simple-read   [  88% ] 31/50 VUs  4m24.0s/5m00.0s
+
+running (4m25.0s), 30/50 VUs, 11330 complete and 0 interrupted iterations
+simple-read   [  88% ] 30/50 VUs  4m25.0s/5m00.0s
+
+running (4m26.0s), 30/50 VUs, 11350 complete and 0 interrupted iterations
+simple-read   [  89% ] 30/50 VUs  4m26.0s/5m00.0s
+
+running (4m27.0s), 29/50 VUs, 11374 complete and 0 interrupted iterations
+simple-read   [  89% ] 29/50 VUs  4m27.0s/5m00.0s
+
+running (4m28.0s), 28/50 VUs, 11403 complete and 0 interrupted iterations
+simple-read   [  89% ] 28/50 VUs  4m28.0s/5m00.0s
+
+running (4m29.0s), 27/50 VUs, 11431 complete and 0 interrupted iterations
+simple-read   [  90% ] 27/50 VUs  4m29.0s/5m00.0s
+
+running (4m30.0s), 26/50 VUs, 11458 complete and 0 interrupted iterations
+simple-read   [  90% ] 26/50 VUs  4m30.0s/5m00.0s
+
+running (4m31.0s), 25/50 VUs, 11484 complete and 0 interrupted iterations
+simple-read   [  90% ] 25/50 VUs  4m31.0s/5m00.0s
+
+running (4m32.0s), 25/50 VUs, 11509 complete and 0 interrupted iterations
+simple-read   [  91% ] 25/50 VUs  4m32.0s/5m00.0s
+
+running (4m33.0s), 24/50 VUs, 11534 complete and 0 interrupted iterations
+simple-read   [  91% ] 24/50 VUs  4m33.0s/5m00.0s
+
+running (4m34.0s), 23/50 VUs, 11558 complete and 0 interrupted iterations
+simple-read   [  91% ] 23/50 VUs  4m34.0s/5m00.0s
+
+running (4m35.0s), 22/50 VUs, 11581 complete and 0 interrupted iterations
+simple-read   [  92% ] 22/50 VUs  4m35.0s/5m00.0s
+
+running (4m36.0s), 21/50 VUs, 11603 complete and 0 interrupted iterations
+simple-read   [  92% ] 21/50 VUs  4m36.0s/5m00.0s
+
+running (4m37.0s), 20/50 VUs, 11624 complete and 0 interrupted iterations
+simple-read   [  92% ] 20/50 VUs  4m37.0s/5m00.0s
+
+running (4m38.0s), 20/50 VUs, 11644 complete and 0 interrupted iterations
+simple-read   [  93% ] 20/50 VUs  4m38.0s/5m00.0s
+
+running (4m39.0s), 19/50 VUs, 11664 complete and 0 interrupted iterations
+simple-read   [  93% ] 19/50 VUs  4m39.0s/5m00.0s
+
+running (4m40.0s), 18/50 VUs, 11683 complete and 0 interrupted iterations
+simple-read   [  93% ] 18/50 VUs  4m40.0s/5m00.0s
+
+running (4m41.0s), 17/50 VUs, 11701 complete and 0 interrupted iterations
+simple-read   [  94% ] 17/50 VUs  4m41.0s/5m00.0s
+
+running (4m42.0s), 16/50 VUs, 11718 complete and 0 interrupted iterations
+simple-read   [  94% ] 16/50 VUs  4m42.0s/5m00.0s
+
+running (4m43.0s), 15/50 VUs, 11734 complete and 0 interrupted iterations
+simple-read   [  94% ] 15/50 VUs  4m43.0s/5m00.0s
+
+running (4m44.0s), 14/50 VUs, 11749 complete and 0 interrupted iterations
+simple-read   [  95% ] 14/50 VUs  4m44.0s/5m00.0s
+
+running (4m45.0s), 14/50 VUs, 11763 complete and 0 interrupted iterations
+simple-read   [  95% ] 14/50 VUs  4m45.0s/5m00.0s
+
+running (4m46.0s), 13/50 VUs, 11777 complete and 0 interrupted iterations
+simple-read   [  95% ] 13/50 VUs  4m46.0s/5m00.0s
+
+running (4m47.0s), 12/50 VUs, 11790 complete and 0 interrupted iterations
+simple-read   [  96% ] 12/50 VUs  4m47.0s/5m00.0s
+
+running (4m48.0s), 11/50 VUs, 11802 complete and 0 interrupted iterations
+simple-read   [  96% ] 11/50 VUs  4m48.0s/5m00.0s
+
+running (4m49.0s), 10/50 VUs, 11813 complete and 0 interrupted iterations
+simple-read   [  96% ] 10/50 VUs  4m49.0s/5m00.0s
+
+running (4m50.0s), 09/50 VUs, 11823 complete and 0 interrupted iterations
+simple-read   [  97% ] 09/50 VUs  4m50.0s/5m00.0s
+
+running (4m51.0s), 08/50 VUs, 11832 complete and 0 interrupted iterations
+simple-read   [  97% ] 08/50 VUs  4m51.0s/5m00.0s
+
+running (4m52.0s), 08/50 VUs, 11840 complete and 0 interrupted iterations
+simple-read   [  97% ] 08/50 VUs  4m52.0s/5m00.0s
+
+running (4m53.0s), 07/50 VUs, 11848 complete and 0 interrupted iterations
+simple-read   [  98% ] 07/50 VUs  4m53.0s/5m00.0s
+
+running (4m54.0s), 06/50 VUs, 11855 complete and 0 interrupted iterations
+simple-read   [  98% ] 06/50 VUs  4m54.0s/5m00.0s
+
+running (4m55.0s), 05/50 VUs, 11861 complete and 0 interrupted iterations
+simple-read   [  98% ] 05/50 VUs  4m55.0s/5m00.0s
+
+running (4m56.0s), 04/50 VUs, 11866 complete and 0 interrupted iterations
+simple-read   [  99% ] 04/50 VUs  4m56.0s/5m00.0s
+
+running (4m57.0s), 03/50 VUs, 11870 complete and 0 interrupted iterations
+simple-read   [  99% ] 03/50 VUs  4m57.0s/5m00.0s
+
+running (4m58.0s), 03/50 VUs, 11873 complete and 0 interrupted iterations
+simple-read   [  99% ] 03/50 VUs  4m58.0s/5m00.0s
+
+running (4m59.0s), 02/50 VUs, 11876 complete and 0 interrupted iterations
+simple-read   [ 100% ] 02/50 VUs  4m59.0s/5m00.0s
+
+running (5m00.0s), 01/50 VUs, 11878 complete and 0 interrupted iterations
+simple-read   [ 100% ] 01/50 VUs  5m00.0s/5m00.0s
+time="2025-11-17T07:51:42Z" level=info msg="Scenario 1 (GraphQL) completed" source=console
+
+running (5m00.6s), 00/50 VUs, 11879 complete and 0 interrupted iterations
+simple-read ✓ [ 100% ] 00/50 VUs  5m0s
+time="2025-11-17T07:51:43Z" level=error msg="failed to handle the end-of-test summary" error="error handling summary object summary.html: invalid type <nil>, it needs to be a string or ArrayBuffer"

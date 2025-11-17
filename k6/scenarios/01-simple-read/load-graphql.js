@@ -9,15 +9,18 @@
 import { sleep } from 'k6';
 import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../config.js';
 import { graphqlQuery, checkGraphQLResponse, randomInt } from '../../helpers.js';
+import { handleSummary } from '../../summary.js';
 
 // Test configuration
+// Note: Tags (api, phase, scenario) are added via CLI by run-test.sh
 export const options = {
-  stages: TEST_STAGES.load,
   thresholds: THRESHOLDS.load,
-  tags: {
-    test_name: '01-simple-read-load-graphql',
-    scenario: '1',
-    api: 'graphql',
+  // Give the scenario a proper name for better reporting
+  scenarios: {
+    'simple-read': {
+      executor: 'ramping-vus',
+      stages: TEST_STAGES.load,
+    },
   },
 };
 
@@ -60,3 +63,6 @@ export function setup() {
 export function teardown(data) {
   console.log('Scenario 1 (GraphQL) completed');
 }
+
+// Export the custom summary handler
+export { handleSummary };
