@@ -92,8 +92,13 @@ graphql-vs-rest-benchmark/
 │   ├── EventQL/            # GraphQL API
 │   └── EventREST/          # REST API
 ├── k6/                     # k6 load testing scripts
-│   ├── scenarios/          # 7 test scenarios
-│   └── common/             # Shared utilities
+│   ├── config.js           # Shared configuration
+│   ├── helpers.js          # Utility functions
+│   ├── summary.js          # Custom test summary handler
+│   ├── before_optimization/ # Phase 1: Baseline tests
+│   │   └── scenarios/      # Test scenarios (no optimization)
+│   └── after_optimization/ # Phase 2: Optimized tests
+│       └── scenarios/      # Test scenarios (pagination + caching)
 ├── grafana/                # Monitoring dashboards
 │   ├── dashboards/         # Dashboard definitions
 │   └── datasources/        # InfluxDB configuration
@@ -134,9 +139,9 @@ docker run --rm -i \
   grafana/k6 run \
   --out influxdb=http://influxdb:8086 \
   --tag api=graphql \
-  --tag phase=1 \
+  --tag phase=before_optimization \
   --tag scenario=1 \
-  - < k6/scenarios/01-simple-read/load-graphql.js
+  - < k6/before_optimization/scenarios/01-simple-read/load-graphql.js
 ```
 
 ### Full Phase

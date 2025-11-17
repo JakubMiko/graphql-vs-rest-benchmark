@@ -54,8 +54,8 @@ case $SCENARIO_NAME in
         ;;
 esac
 
-# Build test script path
-TEST_SCRIPT="scenarios/${SCENARIO_FOLDER}/${TEST_TYPE}-${API}.js"
+# Build test script path (includes phase folder)
+TEST_SCRIPT="${PHASE_NAME}/scenarios/${SCENARIO_FOLDER}/${TEST_TYPE}-${API}.js"
 TEST_SCRIPT_FULL="k6/${TEST_SCRIPT}"
 
 # Check if test script exists
