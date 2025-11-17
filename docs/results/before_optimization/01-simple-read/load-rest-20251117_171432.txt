@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     simple-read
+Test Type:    load
+API:          rest
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/01-simple-read/load-rest.js
+Timestamp:    2025-11-17 17:14:32
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-17T16:14:32Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "01")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/ET8Kia6dJWIssEsWEQtUAmtM8Wa3YLhf
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+running (4m27.0s), 29/50 VUs, 11468 complete and 0 interrupted iterations
+simple-read   [  89% ] 29/50 VUs  4m27.0s/5m00.0s
+
+running (4m28.0s), 27/50 VUs, 11497 complete and 0 interrupted iterations
+simple-read   [  89% ] 27/50 VUs  4m28.0s/5m00.0s
+
+running (4m29.0s), 27/50 VUs, 11524 complete and 0 interrupted iterations
+simple-read   [  90% ] 27/50 VUs  4m29.0s/5m00.0s
+
+running (4m30.0s), 26/50 VUs, 11551 complete and 0 interrupted iterations
+simple-read   [  90% ] 26/50 VUs  4m30.0s/5m00.0s
+
+running (4m31.0s), 25/50 VUs, 11577 complete and 0 interrupted iterations
+simple-read   [  90% ] 25/50 VUs  4m31.0s/5m00.0s
+
+running (4m32.0s), 24/50 VUs, 11602 complete and 0 interrupted iterations
+simple-read   [  91% ] 24/50 VUs  4m32.0s/5m00.0s
+
+running (4m33.0s), 23/50 VUs, 11626 complete and 0 interrupted iterations
+simple-read   [  91% ] 23/50 VUs  4m33.0s/5m00.0s
+
+running (4m34.0s), 22/50 VUs, 11649 complete and 0 interrupted iterations
+simple-read   [  91% ] 22/50 VUs  4m34.0s/5m00.0s
+
+running (4m35.0s), 22/50 VUs, 11671 complete and 0 interrupted iterations
+simple-read   [  92% ] 22/50 VUs  4m35.0s/5m00.0s
+
+running (4m36.0s), 21/50 VUs, 11693 complete and 0 interrupted iterations
+simple-read   [  92% ] 21/50 VUs  4m36.0s/5m00.0s
+
+running (4m37.0s), 20/50 VUs, 11714 complete and 0 interrupted iterations
+simple-read   [  92% ] 20/50 VUs  4m37.0s/5m00.0s
+
+running (4m38.0s), 19/50 VUs, 11733 complete and 0 interrupted iterations
+simple-read   [  93% ] 19/50 VUs  4m38.0s/5m00.0s
+
+running (4m39.0s), 19/50 VUs, 11750 complete and 0 interrupted iterations
+simple-read   [  93% ] 19/50 VUs  4m39.0s/5m00.0s
+
+running (4m40.0s), 18/50 VUs, 11765 complete and 0 interrupted iterations
+simple-read   [  93% ] 18/50 VUs  4m40.0s/5m00.0s
+
+running (4m41.0s), 17/50 VUs, 11783 complete and 0 interrupted iterations
+simple-read   [  94% ] 17/50 VUs  4m41.0s/5m00.0s
+
+running (4m42.0s), 16/50 VUs, 11800 complete and 0 interrupted iterations
+simple-read   [  94% ] 16/50 VUs  4m42.0s/5m00.0s
+
+running (4m43.0s), 15/50 VUs, 11816 complete and 0 interrupted iterations
+simple-read   [  94% ] 15/50 VUs  4m43.0s/5m00.0s
+
+running (4m44.0s), 14/50 VUs, 11831 complete and 0 interrupted iterations
+simple-read   [  95% ] 14/50 VUs  4m44.0s/5m00.0s
+
+running (4m45.0s), 13/50 VUs, 11845 complete and 0 interrupted iterations
+simple-read   [  95% ] 13/50 VUs  4m45.0s/5m00.0s
+
+running (4m46.0s), 12/50 VUs, 11858 complete and 0 interrupted iterations
+simple-read   [  95% ] 12/50 VUs  4m46.0s/5m00.0s
+
+running (4m47.0s), 12/50 VUs, 11870 complete and 0 interrupted iterations
+simple-read   [  96% ] 12/50 VUs  4m47.0s/5m00.0s
+
+running (4m48.0s), 11/50 VUs, 11882 complete and 0 interrupted iterations
+simple-read   [  96% ] 11/50 VUs  4m48.0s/5m00.0s
+
+running (4m49.0s), 10/50 VUs, 11893 complete and 0 interrupted iterations
+simple-read   [  96% ] 10/50 VUs  4m49.0s/5m00.0s
+
+running (4m50.0s), 10/50 VUs, 11903 complete and 0 interrupted iterations
+simple-read   [  97% ] 10/50 VUs  4m50.0s/5m00.0s
+
+running (4m51.0s), 09/50 VUs, 11913 complete and 0 interrupted iterations
+simple-read   [  97% ] 09/50 VUs  4m51.0s/5m00.0s
+
+running (4m52.0s), 07/50 VUs, 11922 complete and 0 interrupted iterations
+simple-read   [  97% ] 07/50 VUs  4m52.0s/5m00.0s
+
+running (4m53.0s), 07/50 VUs, 11929 complete and 0 interrupted iterations
+simple-read   [  98% ] 07/50 VUs  4m53.0s/5m00.0s
+
+running (4m54.0s), 06/50 VUs, 11936 complete and 0 interrupted iterations
+simple-read   [  98% ] 06/50 VUs  4m54.0s/5m00.0s
+
+running (4m55.0s), 05/50 VUs, 11942 complete and 0 interrupted iterations
+simple-read   [  98% ] 05/50 VUs  4m55.0s/5m00.0s
+
+running (4m56.0s), 05/50 VUs, 11947 complete and 0 interrupted iterations
+simple-read   [  99% ] 05/50 VUs  4m56.0s/5m00.0s
+
+running (4m57.0s), 04/50 VUs, 11952 complete and 0 interrupted iterations
+simple-read   [  99% ] 04/50 VUs  4m57.0s/5m00.0s
+
+running (4m58.0s), 03/50 VUs, 11956 complete and 0 interrupted iterations
+simple-read   [  99% ] 03/50 VUs  4m58.0s/5m00.0s
+
+running (4m59.0s), 02/50 VUs, 11959 complete and 0 interrupted iterations
+simple-read   [ 100% ] 02/50 VUs  4m59.0s/5m00.0s
+
+running (5m00.0s), 01/50 VUs, 11961 complete and 0 interrupted iterations
+simple-read   [ 100% ] 01/50 VUs  5m00.0s/5m00.0s
+time="2025-11-17T16:19:33Z" level=info msg="Scenario 1 (REST) completed" source=console
+
+  █ THRESHOLDS
+
+    http_req_duration
+    ✓ 'p(95)<500' http_req_duration=15.21ms
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 35886   119.35455120086003/s
+    checks_succeeded...................: 100.00% 35886 out of 35886
+    checks_failed......................: 0.00% 0 out of 35886
+
+
+    HTTP
+    http_req_duration.......................................................: avg=6.36ms min=756.58µs med=5.07ms max=211.61ms p(90)=12.06ms p(95)=15.21ms
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=11.07µs min=1.04µs med=7.17µs max=1.21ms p(90)=15.17µs p(95)=18.37µs
+    http_req_connecting (TCP handshake).....................................: avg=1.64µs min=0.00µs med=0.00µs max=845.71µs p(90)=0.00µs p(95)=0.00µs
+    http_req_sending (request upload).......................................: avg=25.11µs min=3.04µs med=19.50µs max=1.49ms p(90)=42.75µs p(95)=52.63µs
+    http_req_waiting (server processing)....................................: avg=6.26ms min=730.08µs med=4.96ms max=211.43ms p(90)=11.98ms p(95)=15.14ms
+    http_req_receiving (response download)..................................: avg=68.20µs min=8.29µs med=54.46µs max=1.52ms p(90)=132.79µs p(95)=160.24µs
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 11962
+    http_reqs...............................................................: 11962  39.784850/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=1.01s min=1.00s med=1.01s max=1.22s p(90)=1.01s p(95)=1.02s
+    iterations..............................................................: 11962  39.784850/s
+    vus.....................................................................: 1      min=1          max=50
+    vus_max.................................................................: 50     min=50         max=50
+
+    NETWORK
+    data_received...........................................................: 5.5 MB 18.8 kB/s
+    data_sent...............................................................: 1.4 MB 4.9 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (5m00.7s), 00/50 VUs, 11962 complete and 0 interrupted iterations
+simple-read ✓ [ 100% ] 00/50 VUs  5m0s
