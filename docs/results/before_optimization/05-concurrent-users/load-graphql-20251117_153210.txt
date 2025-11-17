@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     concurrent-users
+Test Type:    load
+API:          graphql
+Phase:        before_optimization
+Test Script:  k6/scenarios/05-concurrent-users/load-graphql.js
+Timestamp:    2025-11-17 15:32:10
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-17T14:32:10Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "graphql")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "05")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+time="2025-11-17T14:33:52Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m42.0s), 43/50 VUs, 391 complete and 0 interrupted iterations
+concurrent-users   [  85% ] 43/50 VUs  1m41.6s/2m00.0s
+time="2025-11-17T14:33:52Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:52Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:52Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:53Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m43.0s), 38/50 VUs, 399 complete and 0 interrupted iterations
+concurrent-users   [  86% ] 38/50 VUs  1m42.6s/2m00.0s
+time="2025-11-17T14:33:54Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:54Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m44.0s), 33/50 VUs, 408 complete and 0 interrupted iterations
+concurrent-users   [  86% ] 33/50 VUs  1m43.6s/2m00.0s
+time="2025-11-17T14:33:54Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:55Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:55Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m45.0s), 32/50 VUs, 415 complete and 0 interrupted iterations
+concurrent-users   [  87% ] 32/50 VUs  1m44.6s/2m00.0s
+time="2025-11-17T14:33:55Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:55Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m46.0s), 32/50 VUs, 420 complete and 0 interrupted iterations
+concurrent-users   [  88% ] 32/50 VUs  1m45.6s/2m00.0s
+time="2025-11-17T14:33:57Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:57Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:57Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m47.0s), 32/50 VUs, 422 complete and 0 interrupted iterations
+concurrent-users   [  89% ] 32/50 VUs  1m46.6s/2m00.0s
+time="2025-11-17T14:33:58Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:58Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m48.0s), 30/50 VUs, 425 complete and 0 interrupted iterations
+concurrent-users   [  90% ] 30/50 VUs  1m47.6s/2m00.0s
+time="2025-11-17T14:33:58Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:58Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:59Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:33:59Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m49.0s), 27/50 VUs, 432 complete and 0 interrupted iterations
+concurrent-users   [  91% ] 27/50 VUs  1m48.6s/2m00.0s
+
+running (1m50.0s), 25/50 VUs, 435 complete and 0 interrupted iterations
+concurrent-users   [  91% ] 25/50 VUs  1m49.6s/2m00.0s
+time="2025-11-17T14:34:01Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:34:01Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m51.0s), 25/50 VUs, 439 complete and 0 interrupted iterations
+concurrent-users   [  92% ] 25/50 VUs  1m50.6s/2m00.0s
+time="2025-11-17T14:34:02Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m52.0s), 22/50 VUs, 448 complete and 0 interrupted iterations
+concurrent-users   [  93% ] 22/50 VUs  1m51.6s/2m00.0s
+time="2025-11-17T14:34:03Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:34:03Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m53.0s), 22/50 VUs, 448 complete and 0 interrupted iterations
+concurrent-users   [  94% ] 22/50 VUs  1m52.6s/2m00.0s
+time="2025-11-17T14:34:04Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m54.0s), 18/50 VUs, 454 complete and 0 interrupted iterations
+concurrent-users   [  95% ] 18/50 VUs  1m53.6s/2m00.0s
+
+running (1m55.0s), 16/50 VUs, 458 complete and 0 interrupted iterations
+concurrent-users   [  96% ] 16/50 VUs  1m54.6s/2m00.0s
+time="2025-11-17T14:34:06Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m56.0s), 13/50 VUs, 462 complete and 0 interrupted iterations
+concurrent-users   [  96% ] 13/50 VUs  1m55.6s/2m00.0s
+time="2025-11-17T14:34:07Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m57.0s), 12/50 VUs, 463 complete and 0 interrupted iterations
+concurrent-users   [  97% ] 12/50 VUs  1m56.6s/2m00.0s
+
+running (1m58.0s), 09/50 VUs, 468 complete and 0 interrupted iterations
+concurrent-users   [  98% ] 09/50 VUs  1m57.6s/2m00.0s
+time="2025-11-17T14:34:09Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (1m59.0s), 07/50 VUs, 472 complete and 0 interrupted iterations
+concurrent-users   [  99% ] 07/50 VUs  1m58.6s/2m00.0s
+time="2025-11-17T14:34:10Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+time="2025-11-17T14:34:10Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (2m00.0s), 06/50 VUs, 473 complete and 0 interrupted iterations
+concurrent-users   [ 100% ] 06/50 VUs  1m59.6s/2m00.0s
+time="2025-11-17T14:34:11Z" level=info msg="[STEP 2] Event details GraphQL errors: [{\"message\":\"Cannot return null for non-nullable field Event.category\",\"locations\":[{\"line\":9,\"column\":7}],\"path\":[\"event\",\"category\"]}]" source=console
+
+running (2m01.0s), 05/50 VUs, 474 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 05/50 VUs  2m0s
+
+running (2m02.0s), 03/50 VUs, 476 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 05/50 VUs  2m0s
+
+running (2m03.0s), 01/50 VUs, 478 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 05/50 VUs  2m0s
+time="2025-11-17T14:34:14Z" level=info msg="Scenario 5 (GraphQL) completed" source=console
+time="2025-11-17T14:34:14Z" level=info msg="Note: Created orders should be cleaned up with cleanup-test-data.sh" source=console
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✗ 'p(95)<500' http_req_duration=5.01s
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 7130   57.71099712539492/s
+    checks_succeeded...................: 89.75% 6399 out of 7130
+    checks_failed......................: 10.25% 731 out of 7130
+
+
+    HTTP
+    http_req_duration.......................................................: avg=1.70s min=2.96ms med=1.07s max=8.45s p(90)=4.36s p(95)=5.01s
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=16.52µs min=1.46µs med=5.21µs max=1.93ms p(90)=9.71µs p(95)=15.49µs
+    http_req_connecting (TCP handshake).....................................: avg=7.72µs min=0.00µs med=0.00µs max=633.83µs p(90)=0.00µs p(95)=0.00µs
+    http_req_sending (request upload).......................................: avg=31.08µs min=4.75µs med=26.21µs max=2.16ms p(90)=43.31µs p(95)=56.99µs
+    http_req_waiting (server processing)....................................: avg=1.70s min=2.86ms med=1.07s max=8.45s p(90)=4.35s p(95)=5.01s
+    http_req_receiving (response download)..................................: avg=1.25ms min=24.33µs med=112.92µs max=294.59ms p(90)=2.23ms p(95)=2.97ms
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 1427
+    http_reqs...............................................................: 1427  11.550294/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=9.88s min=4.65s med=9.53s max=19.22s p(90)=14.39s p(95)=15.22s
+    iterations..............................................................: 479  3.877078/s
+    vus.....................................................................: 1      min=1          max=50
+    vus_max.................................................................: 50     min=50         max=50
+
+    NETWORK
+    data_received...........................................................: 1315.9 MB 10.7 MB/s
+    data_sent...............................................................: 571.9 kB 4.6 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (2m03.5s), 00/50 VUs, 479 complete and 0 interrupted iterations
+concurrent-users ✓ [ 100% ] 00/50 VUs  2m0s
+time="2025-11-17T14:34:14Z" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"

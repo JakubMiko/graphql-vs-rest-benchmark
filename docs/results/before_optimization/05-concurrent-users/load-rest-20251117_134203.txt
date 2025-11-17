@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     concurrent-users
+Test Type:    load
+API:          rest
+Phase:        before_optimization
+Test Script:  k6/scenarios/05-concurrent-users/load-rest.js
+Timestamp:    2025-11-17 13:42:03
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-17T12:42:03Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "05")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+
+running (4m33.0s), 25/50 VUs, 1316 complete and 0 interrupted iterations
+concurrent-users   [  91% ] 25/50 VUs  4m32.5s/5m00.0s
+
+running (4m34.0s), 25/50 VUs, 1318 complete and 0 interrupted iterations
+concurrent-users   [  91% ] 25/50 VUs  4m33.5s/5m00.0s
+
+running (4m35.0s), 23/50 VUs, 1325 complete and 0 interrupted iterations
+concurrent-users   [  91% ] 23/50 VUs  4m34.5s/5m00.0s
+
+running (4m36.0s), 23/50 VUs, 1329 complete and 0 interrupted iterations
+concurrent-users   [  92% ] 23/50 VUs  4m35.5s/5m00.0s
+
+running (4m37.0s), 22/50 VUs, 1334 complete and 0 interrupted iterations
+concurrent-users   [  92% ] 22/50 VUs  4m36.5s/5m00.0s
+
+running (4m38.0s), 21/50 VUs, 1338 complete and 0 interrupted iterations
+concurrent-users   [  92% ] 21/50 VUs  4m37.5s/5m00.0s
+
+running (4m39.0s), 21/50 VUs, 1343 complete and 0 interrupted iterations
+concurrent-users   [  93% ] 21/50 VUs  4m38.5s/5m00.0s
+
+running (4m40.0s), 20/50 VUs, 1345 complete and 0 interrupted iterations
+concurrent-users   [  93% ] 20/50 VUs  4m39.5s/5m00.0s
+
+running (4m41.0s), 19/50 VUs, 1349 complete and 0 interrupted iterations
+concurrent-users   [  93% ] 19/50 VUs  4m40.5s/5m00.0s
+
+running (4m42.0s), 18/50 VUs, 1353 complete and 0 interrupted iterations
+concurrent-users   [  94% ] 18/50 VUs  4m41.5s/5m00.0s
+
+running (4m43.0s), 17/50 VUs, 1357 complete and 0 interrupted iterations
+concurrent-users   [  94% ] 17/50 VUs  4m42.5s/5m00.0s
+
+running (4m44.0s), 16/50 VUs, 1363 complete and 0 interrupted iterations
+concurrent-users   [  94% ] 16/50 VUs  4m43.5s/5m00.0s
+
+running (4m45.0s), 16/50 VUs, 1364 complete and 0 interrupted iterations
+concurrent-users   [  95% ] 16/50 VUs  4m44.5s/5m00.0s
+
+running (4m46.0s), 14/50 VUs, 1368 complete and 0 interrupted iterations
+concurrent-users   [  95% ] 14/50 VUs  4m45.5s/5m00.0s
+
+running (4m47.0s), 14/50 VUs, 1371 complete and 0 interrupted iterations
+concurrent-users   [  95% ] 14/50 VUs  4m46.5s/5m00.0s
+
+running (4m48.0s), 13/50 VUs, 1374 complete and 0 interrupted iterations
+concurrent-users   [  96% ] 13/50 VUs  4m47.5s/5m00.0s
+
+running (4m49.0s), 13/50 VUs, 1376 complete and 0 interrupted iterations
+concurrent-users   [  96% ] 13/50 VUs  4m48.5s/5m00.0s
+
+running (4m50.0s), 12/50 VUs, 1380 complete and 0 interrupted iterations
+concurrent-users   [  96% ] 12/50 VUs  4m49.5s/5m00.0s
+
+running (4m51.0s), 11/50 VUs, 1381 complete and 0 interrupted iterations
+concurrent-users   [  97% ] 11/50 VUs  4m50.5s/5m00.0s
+
+running (4m52.0s), 10/50 VUs, 1384 complete and 0 interrupted iterations
+concurrent-users   [  97% ] 10/50 VUs  4m51.5s/5m00.0s
+
+running (4m53.0s), 10/50 VUs, 1387 complete and 0 interrupted iterations
+concurrent-users   [  97% ] 10/50 VUs  4m52.5s/5m00.0s
+
+running (4m54.0s), 09/50 VUs, 1388 complete and 0 interrupted iterations
+concurrent-users   [  98% ] 09/50 VUs  4m53.5s/5m00.0s
+
+running (4m55.0s), 07/50 VUs, 1392 complete and 0 interrupted iterations
+concurrent-users   [  98% ] 07/50 VUs  4m54.5s/5m00.0s
+
+running (4m56.0s), 07/50 VUs, 1392 complete and 0 interrupted iterations
+concurrent-users   [  98% ] 07/50 VUs  4m55.5s/5m00.0s
+
+running (4m57.0s), 07/50 VUs, 1393 complete and 0 interrupted iterations
+concurrent-users   [  99% ] 07/50 VUs  4m56.5s/5m00.0s
+
+running (4m58.0s), 04/50 VUs, 1397 complete and 0 interrupted iterations
+concurrent-users   [  99% ] 04/50 VUs  4m57.5s/5m00.0s
+
+running (4m59.0s), 04/50 VUs, 1397 complete and 0 interrupted iterations
+concurrent-users   [  99% ] 04/50 VUs  4m58.5s/5m00.0s
+
+running (5m00.0s), 03/50 VUs, 1398 complete and 0 interrupted iterations
+concurrent-users   [ 100% ] 03/50 VUs  4m59.5s/5m00.0s
+
+running (5m01.0s), 03/50 VUs, 1399 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 03/50 VUs  5m0s
+
+running (5m02.0s), 02/50 VUs, 1400 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 03/50 VUs  5m0s
+
+running (5m03.0s), 02/50 VUs, 1400 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 03/50 VUs  5m0s
+
+running (5m04.0s), 01/50 VUs, 1401 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 03/50 VUs  5m0s
+
+running (5m05.0s), 01/50 VUs, 1401 complete and 0 interrupted iterations
+concurrent-users ↓ [ 100% ] 03/50 VUs  5m0s
+time="2025-11-17T12:47:09Z" level=info msg="Scenario 5 (REST) completed" source=console
+time="2025-11-17T12:47:09Z" level=info msg="Note: Created orders should be cleaned up with cleanup-test-data.sh" source=console
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✗ 'rate<0.01' http_req_failed=25.00%
+
+    http_req_duration
+    ✗ 'p(95)<500' http_req_duration=4.78s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 16824   55.05640200999299/s
+    checks_succeeded...................: 85.08% 14314 out of 16824
+    checks_failed......................: 14.92% 2510 out of 16824
+
+
+    HTTP
+    http_req_duration.......................................................: avg=916.47ms min=2.13ms med=43.60ms max=6.45s p(90)=4.31s p(95)=4.78s
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=10.17µs min=2.04µs med=6.00µs max=888.92µs p(90)=9.47µs p(95)=12.73µs
+    http_req_connecting (TCP handshake).....................................: avg=2.31µs min=0.00µs med=0.00µs max=689.42µs p(90)=0.00µs p(95)=0.00µs
+    http_req_sending (request upload).......................................: avg=28.69µs min=5.67µs med=25.08µs max=1.03ms p(90)=41.04µs p(95)=52.25µs
+    http_req_waiting (server processing)....................................: avg=916.29ms min=2.05ms med=43.48ms max=6.45s p(90)=4.31s p(95)=4.78s
+    http_req_receiving (response download)..................................: avg=146.35µs min=9.33µs med=77.54µs max=2.53ms p(90)=332.78µs p(95)=406.42µs
+
+    HTTP Summary:
+    http_req_failed.........................................................: 25.00%  1402 out of 5609
+    http_reqs...............................................................: 5609  18.355406/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=8.70s min=5.25s med=9.28s max=11.71s p(90)=10.21s p(95)=10.52s
+    iterations..............................................................: 1402  4.588034/s
+    vus.....................................................................: 1      min=1          max=50
+    vus_max.................................................................: 50     min=50         max=50
+
+    NETWORK
+    data_received...........................................................: 642.0 MB 2.1 MB/s
+    data_sent...............................................................: 1022.6 kB 3.3 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (5m05.6s), 00/50 VUs, 1402 complete and 0 interrupted iterations
+concurrent-users ✓ [ 100% ] 00/50 VUs  5m0s
+time="2025-11-17T12:47:09Z" level=error msg="thresholds on metrics 'http_req_duration, http_req_failed' have been crossed"
