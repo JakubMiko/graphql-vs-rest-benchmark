@@ -29,9 +29,9 @@ case $SCENARIO_NAME in
         RESULTS_FOLDER="01-simple-read"
         ;;
     nested-data)
-        SCENARIO_FOLDER="03-nested-data"  # k6 script folder (old numbering)
+        SCENARIO_FOLDER="02-nested-data"
         SCENARIO_NUM="02"
-        RESULTS_FOLDER="02-nested-data"   # results folder (sequential)
+        RESULTS_FOLDER="02-nested-data"
         ;;
     selective-fields)
         SCENARIO_FOLDER="04-selective-fields"

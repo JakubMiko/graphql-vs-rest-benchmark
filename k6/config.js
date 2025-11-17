@@ -15,10 +15,9 @@ export const TEST_STAGES = {
   ],
 
   stress: [
-    { duration: '2m', target: 50 },   // Normal
-    { duration: '3m', target: 100 },  // Stress
-    { duration: '3m', target: 200 },  // High stress
-    { duration: '2m', target: 0 },    // Recovery
+    { duration: '2m', target: 100 },  // Ramp up to 100 VUs (2x load test)
+    { duration: '5m', target: 100 },  // Hold at 100 VUs (longer than load test)
+    { duration: '2m', target: 0 },    // Ramp down
   ],
 
   spike: [
@@ -28,8 +27,8 @@ export const TEST_STAGES = {
   ],
 
   soak: [
-    { duration: '5m', target: 50 },   // Ramp up
-    { duration: '110m', target: 50 }, // Sustained load (1h 50m)
+    { duration: '5m', target: 50 },   // Ramp up to 50 VUs
+    { duration: '110m', target: 50 }, // Sustained load (2 hours)
     { duration: '5m', target: 0 },    // Cool down
   ],
 };
