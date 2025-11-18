@@ -22,19 +22,20 @@ export const options = {
   },
 };
 
-// GraphQL query for fetching users with their orders (nested data)
+// GraphQL query for fetching events with their ticket batches (nested data)
 const QUERY = `
-  query GetUsersWithOrders {
-    users(first: 10) {
+  query GetEventsWithTicketBatches {
+    events {
       id
-      email
-      firstName
-      lastName
-      orders {
+      name
+      place
+      date
+      ticketBatches {
         id
-        status
-        totalAmount
-        createdAt
+        price
+        availableTickets
+        saleStart
+        saleEnd
       }
     }
   }

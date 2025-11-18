@@ -1,6 +1,6 @@
 // k6/scenarios/02-nested-data/soak-rest.js
 // Scenario 2: Nested Data - REST Soak Test
-// Long-duration test to detect memory leaks with N+1 query pattern
+// Long-duration test to detect memory leaks and stability with N+1 query pattern
 //
 // Purpose: Verify stability over extended period with multiple requests per iteration
 // Duration: 2 hours sustained load at 50 VUs
@@ -23,23 +23,27 @@ export const options = {
 };
 
 export default function () {
-  // Step 1: Fetch list of users - NO PAGINATION in before_optimization phase
-  const usersResponse = restRequest('GET', '/users');
-  checkResponse(usersResponse, 200, 'users fetched successfully');
+  // Step 1: Fetch list of events (1 request) - NO PAGINATION in before_optimization phase
+  const eventsResponse = restRequest('GET', '/events');
+  checkResponse(eventsResponse, 200, 'events fetched successfully');
 
-  if (usersResponse.status === 200) {
-    const usersData = JSON.parse(usersResponse.body);
-    const users = usersData.data || usersData.users || [];
+  if (eventsResponse.status === 200) {
+    const eventsData = JSON.parse(eventsResponse.body);
+    const events = eventsData.data || eventsData.events || [];
 
-    // Limit to first 10 users in the client
-    const limitedUsers = users.slice(0, 10);
+    // Limit to first 10 events in the client (simulating what pagination would do)
+    // But still fetch ALL from server (demonstrating over-fetching before optimization)
+    const limitedEvents = events.slice(0, 10);
 
-    // Step 2: Fetch orders for each user (N+1 problem)
+    // Step 2: Fetch ticket_batches for EACH event (N requests - demonstrating N+1 problem)
     // Over 2 hours, watch for connection pool issues or memory leaks
-    limitedUsers.forEach((user) => {
-      const ordersResponse = restRequest('GET', `/users/${user.id}/orders`);
-      checkResponse(ordersResponse, 200, `orders fetched for user ${user.id}`);
+    limitedEvents.forEach((event) => {
+      const ticketBatchesResponse = restRequest('GET', `/events/${event.id}/ticket_batches`);
+      checkResponse(ticketBatchesResponse, 200, `ticket_batches fetched for event ${event.id}`);
     });
+
+    // Total HTTP requests: 1 (events) + N (ticket_batches per event)
+    // vs GraphQL: 1 HTTP request for everything
   }
 
   sleep(SLEEP_DURATION.between_requests);
@@ -47,7 +51,8 @@ export default function () {
 
 export function setup() {
   console.log('Starting Scenario 2: Nested Data - REST Soak Test');
-  console.log('Testing: Long-duration stability with N+1 query pattern');
+  console.log('Testing: GET /events → GET /events/:id/ticket_batches (N+1 problem)');
+  console.log('Expected: 1+N HTTP requests sustained over 2 hours');
   console.log('Duration: 2 hours sustained load at 50 VUs');
   console.log('Goal: Detect connection pool issues, memory leaks over time');
   console.log('Watch for: Connection exhaustion, gradual slowdown');

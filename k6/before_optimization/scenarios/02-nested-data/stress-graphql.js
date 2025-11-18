@@ -1,6 +1,6 @@
 // k6/scenarios/02-nested-data/stress-graphql.js
 // Scenario 2: Nested Data - GraphQL Stress Test
-// Fetch users with their orders under increasing load to find breaking point
+// Fetch events with their ticket batches under increasing load to find breaking point
 //
 // Purpose: Determine maximum capacity and performance degradation pattern
 // Load: Ramp from 50 → 100 → 200 VUs to find system limits
@@ -22,19 +22,20 @@ export const options = {
   },
 };
 
-// GraphQL query for fetching users with their orders (nested data)
+// GraphQL query for fetching events with their ticket batches (nested data)
 const QUERY = `
-  query GetUsersWithOrders {
-    users(first: 10) {
+  query GetEventsWithTicketBatches {
+    events {
       id
-      email
-      firstName
-      lastName
-      orders {
+      name
+      place
+      date
+      ticketBatches {
         id
-        status
-        totalAmount
-        createdAt
+        price
+        availableTickets
+        saleStart
+        saleEnd
       }
     }
   }
@@ -48,7 +49,8 @@ export default function () {
 
 export function setup() {
   console.log('Starting Scenario 2: Nested Data - GraphQL Stress Test');
-  console.log('Testing: users with orders under increasing load');
+  console.log('Testing: events with ticketBatches query (DataLoader batching)');
+  console.log('Expected: 1 HTTP request with batched DB queries');
   console.log('Load progression: 50 → 100 → 200 VUs');
   console.log('Goal: Find breaking point and measure degradation');
   return {};
