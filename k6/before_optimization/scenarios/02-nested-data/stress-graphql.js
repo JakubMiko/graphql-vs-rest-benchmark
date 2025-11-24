@@ -25,17 +25,19 @@ export const options = {
 // GraphQL query for fetching events with their ticket batches (nested data)
 const QUERY = `
   query GetEventsWithTicketBatches {
-    events {
-      id
-      name
-      place
-      date
-      ticketBatches {
+    events(first: 10) {
+      nodes {
         id
-        price
-        availableTickets
-        saleStart
-        saleEnd
+        name
+        place
+        date
+        ticketBatches {
+          id
+          price
+          availableTickets
+          saleStart
+          saleEnd
+        }
       }
     }
   }

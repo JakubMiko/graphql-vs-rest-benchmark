@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     nested-data
+Test Type:    stress
+API:          graphql
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/02-nested-data/stress-graphql.js
+Timestamp:    2025-11-24 16:35:03
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-24T15:35:03Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "graphql")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "02")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/HiYrcpWpYh8AcSgDJvaJupJsfBcY26zf
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+running (8m26.0s), 029/100 VUs, 33981 complete and 0 interrupted iterations
+nested-data   [  94% ] 029/100 VUs  8m26.0s/9m00.0s
+
+running (8m27.0s), 029/100 VUs, 33998 complete and 0 interrupted iterations
+nested-data   [  94% ] 029/100 VUs  8m27.0s/9m00.0s
+
+running (8m28.0s), 027/100 VUs, 34027 complete and 0 interrupted iterations
+nested-data   [  94% ] 027/100 VUs  8m28.0s/9m00.0s
+
+running (8m29.0s), 027/100 VUs, 34053 complete and 0 interrupted iterations
+nested-data   [  94% ] 027/100 VUs  8m29.0s/9m00.0s
+
+running (8m30.0s), 026/100 VUs, 34080 complete and 0 interrupted iterations
+nested-data   [  94% ] 026/100 VUs  8m30.0s/9m00.0s
+
+running (8m31.0s), 025/100 VUs, 34106 complete and 0 interrupted iterations
+nested-data   [  95% ] 025/100 VUs  8m31.0s/9m00.0s
+
+running (8m32.0s), 024/100 VUs, 34131 complete and 0 interrupted iterations
+nested-data   [  95% ] 024/100 VUs  8m32.0s/9m00.0s
+
+running (8m33.0s), 023/100 VUs, 34151 complete and 0 interrupted iterations
+nested-data   [  95% ] 023/100 VUs  8m33.0s/9m00.0s
+
+running (8m34.0s), 023/100 VUs, 34170 complete and 0 interrupted iterations
+nested-data   [  95% ] 023/100 VUs  8m34.0s/9m00.0s
+
+running (8m35.0s), 022/100 VUs, 34193 complete and 0 interrupted iterations
+nested-data   [  95% ] 022/100 VUs  8m35.0s/9m00.0s
+
+running (8m36.0s), 021/100 VUs, 34215 complete and 0 interrupted iterations
+nested-data   [  96% ] 021/100 VUs  8m36.0s/9m00.0s
+
+running (8m37.0s), 020/100 VUs, 34228 complete and 0 interrupted iterations
+nested-data   [  96% ] 020/100 VUs  8m37.0s/9m00.0s
+
+running (8m38.0s), 020/100 VUs, 34243 complete and 0 interrupted iterations
+nested-data   [  96% ] 020/100 VUs  8m38.0s/9m00.0s
+
+running (8m39.0s), 018/100 VUs, 34263 complete and 0 interrupted iterations
+nested-data   [  96% ] 018/100 VUs  8m39.0s/9m00.0s
+
+running (8m40.0s), 018/100 VUs, 34281 complete and 0 interrupted iterations
+nested-data   [  96% ] 018/100 VUs  8m40.0s/9m00.0s
+
+running (8m41.0s), 017/100 VUs, 34299 complete and 0 interrupted iterations
+nested-data   [  96% ] 017/100 VUs  8m41.0s/9m00.0s
+
+running (8m42.0s), 016/100 VUs, 34316 complete and 0 interrupted iterations
+nested-data   [  97% ] 016/100 VUs  8m42.0s/9m00.0s
+
+running (8m43.0s), 015/100 VUs, 34332 complete and 0 interrupted iterations
+nested-data   [  97% ] 015/100 VUs  8m43.0s/9m00.0s
+
+running (8m44.0s), 014/100 VUs, 34344 complete and 0 interrupted iterations
+nested-data   [  97% ] 014/100 VUs  8m44.0s/9m00.0s
+
+running (8m45.0s), 013/100 VUs, 34356 complete and 0 interrupted iterations
+nested-data   [  97% ] 013/100 VUs  8m45.0s/9m00.0s
+
+running (8m46.0s), 013/100 VUs, 34369 complete and 0 interrupted iterations
+nested-data   [  97% ] 013/100 VUs  8m46.0s/9m00.0s
+
+running (8m47.0s), 011/100 VUs, 34382 complete and 0 interrupted iterations
+nested-data   [  98% ] 011/100 VUs  8m47.0s/9m00.0s
+
+running (8m48.0s), 011/100 VUs, 34393 complete and 0 interrupted iterations
+nested-data   [  98% ] 011/100 VUs  8m48.0s/9m00.0s
+
+running (8m49.0s), 011/100 VUs, 34400 complete and 0 interrupted iterations
+nested-data   [  98% ] 011/100 VUs  8m49.0s/9m00.0s
+
+running (8m50.0s), 010/100 VUs, 34411 complete and 0 interrupted iterations
+nested-data   [  98% ] 010/100 VUs  8m50.0s/9m00.0s
+
+running (8m51.0s), 009/100 VUs, 34421 complete and 0 interrupted iterations
+nested-data   [  98% ] 009/100 VUs  8m51.0s/9m00.0s
+
+running (8m52.0s), 008/100 VUs, 34427 complete and 0 interrupted iterations
+nested-data   [  99% ] 008/100 VUs  8m52.0s/9m00.0s
+
+running (8m53.0s), 007/100 VUs, 34435 complete and 0 interrupted iterations
+nested-data   [  99% ] 007/100 VUs  8m53.0s/9m00.0s
+
+running (8m54.0s), 006/100 VUs, 34442 complete and 0 interrupted iterations
+nested-data   [  99% ] 006/100 VUs  8m54.0s/9m00.0s
+
+running (8m55.0s), 005/100 VUs, 34448 complete and 0 interrupted iterations
+nested-data   [  99% ] 005/100 VUs  8m55.0s/9m00.0s
+
+running (8m56.0s), 004/100 VUs, 34453 complete and 0 interrupted iterations
+nested-data   [  99% ] 004/100 VUs  8m56.0s/9m00.0s
+
+running (8m57.0s), 004/100 VUs, 34457 complete and 0 interrupted iterations
+nested-data   [  99% ] 004/100 VUs  8m57.0s/9m00.0s
+
+running (8m58.0s), 003/100 VUs, 34461 complete and 0 interrupted iterations
+nested-data   [ 100% ] 003/100 VUs  8m58.0s/9m00.0s
+
+running (8m59.0s), 002/100 VUs, 34463 complete and 0 interrupted iterations
+nested-data   [ 100% ] 002/100 VUs  8m59.0s/9m00.0s
+
+running (9m00.0s), 001/100 VUs, 34465 complete and 0 interrupted iterations
+nested-data   [ 100% ] 001/100 VUs  9m00.0s/9m00.0s
+time="2025-11-24T15:44:04Z" level=info msg="Scenario 2 (GraphQL Stress) completed" source=console
+
+  █ THRESHOLDS
+
+    http_req_duration
+    ✓ 'p(95)<2000' http_req_duration=487.25ms
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 172330   318.814944592575/s
+    checks_succeeded...................: 100.00% 172330 out of 172330
+    checks_failed......................: 0.00% 0 out of 172330
+
+
+    HTTP
+    http_req_duration.......................................................: avg=220.35ms min=32.78ms med=199.63ms max=1.08s p(90)=438.88ms p(95)=487.25ms
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=5.43µs min=0.79µs med=3.63µs max=11.23ms p(90)=6.42µs p(95)=7.79µs
+    http_req_connecting (TCP handshake).....................................: avg=0.75µs min=0.00µs med=0.00µs max=11.18ms p(90)=0.00µs p(95)=0.00µs
+    http_req_sending (request upload).......................................: avg=17.47µs min=2.88µs med=15.17µs max=1.80ms p(90)=24.42µs p(95)=30.88µs
+    http_req_waiting (server processing)....................................: avg=220.27ms min=32.71ms med=199.57ms max=1.08s p(90)=438.80ms p(95)=487.18ms
+    http_req_receiving (response download)..................................: avg=64.03µs min=10.13µs med=54.88µs max=3.97ms p(90)=107.04µs p(95)=135.66µs
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 34466
+    http_reqs...............................................................: 34466  63.762989/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=1.22s min=1.03s med=1.20s max=2.09s p(90)=1.44s p(95)=1.49s
+    iterations..............................................................: 34466  63.762989/s
+    vus.....................................................................: 1      min=1          max=100
+    vus_max.................................................................: 100     min=100         max=100
+
+    NETWORK
+    data_received...........................................................: 298.7 MB 565.8 kB/s
+    data_sent...............................................................: 14.7 MB 27.8 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (9m00.5s), 000/100 VUs, 34466 complete and 0 interrupted iterations
+nested-data ✓ [ 100% ] 000/100 VUs  9m0s
