@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     nested-data
+Test Type:    spike
+API:          rest
+Phase:        after_optimization
+Test Script:  k6/after_optimization/scenarios/02-nested-data/spike-rest.js
+Timestamp:    2025-11-23 17:25:57
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-23T16:25:57Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "after_optimization")
+  |> filter(fn: (r) => r["scenario"] == "02")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+
+http://localhost:3030/dashboard/snapshot/aZ9gLrRHXBSXGswvpU2eYmfiJeKkxF9s
+================================================================================
+TEST OUTPUT
+================================================================================
+
+nested-data-spike   [  72% ] 190/200 VUs  1m27.0s/2m00.0s
+
+running (1m28.0s), 193/200 VUs, 2203 complete and 0 interrupted iterations
+nested-data-spike   [  73% ] 193/200 VUs  1m28.0s/2m00.0s
+
+running (1m29.0s), 196/200 VUs, 2243 complete and 0 interrupted iterations
+nested-data-spike   [  74% ] 196/200 VUs  1m29.0s/2m00.0s
+
+running (1m30.0s), 199/200 VUs, 2280 complete and 0 interrupted iterations
+nested-data-spike   [  75% ] 199/200 VUs  1m30.0s/2m00.0s
+
+running (1m31.0s), 200/200 VUs, 2312 complete and 0 interrupted iterations
+nested-data-spike   [  76% ] 200/200 VUs  1m31.0s/2m00.0s
+
+running (1m32.0s), 200/200 VUs, 2342 complete and 0 interrupted iterations
+nested-data-spike   [  77% ] 200/200 VUs  1m32.0s/2m00.0s
+
+running (1m33.0s), 197/200 VUs, 2373 complete and 0 interrupted iterations
+nested-data-spike   [  77% ] 197/200 VUs  1m33.0s/2m00.0s
+
+running (1m34.0s), 194/200 VUs, 2417 complete and 0 interrupted iterations
+nested-data-spike   [  78% ] 194/200 VUs  1m34.0s/2m00.0s
+
+running (1m35.0s), 187/200 VUs, 2458 complete and 0 interrupted iterations
+nested-data-spike   [  79% ] 187/200 VUs  1m35.0s/2m00.0s
+
+running (1m36.0s), 181/200 VUs, 2498 complete and 0 interrupted iterations
+nested-data-spike   [  80% ] 181/200 VUs  1m36.0s/2m00.0s
+
+running (1m37.0s), 174/200 VUs, 2531 complete and 0 interrupted iterations
+nested-data-spike   [  81% ] 174/200 VUs  1m37.0s/2m00.0s
+
+running (1m38.0s), 168/200 VUs, 2567 complete and 0 interrupted iterations
+nested-data-spike   [  82% ] 168/200 VUs  1m38.0s/2m00.0s
+
+running (1m39.0s), 161/200 VUs, 2611 complete and 0 interrupted iterations
+nested-data-spike   [  82% ] 161/200 VUs  1m39.0s/2m00.0s
+
+running (1m40.0s), 153/200 VUs, 2654 complete and 0 interrupted iterations
+nested-data-spike   [  83% ] 153/200 VUs  1m40.0s/2m00.0s
+
+running (1m41.0s), 147/200 VUs, 2694 complete and 0 interrupted iterations
+nested-data-spike   [  84% ] 147/200 VUs  1m41.0s/2m00.0s
+
+running (1m42.0s), 141/200 VUs, 2727 complete and 0 interrupted iterations
+nested-data-spike   [  85% ] 141/200 VUs  1m42.0s/2m00.0s
+
+running (1m43.0s), 136/200 VUs, 2768 complete and 0 interrupted iterations
+nested-data-spike   [  86% ] 136/200 VUs  1m43.0s/2m00.0s
+
+running (1m44.0s), 127/200 VUs, 2811 complete and 0 interrupted iterations
+nested-data-spike   [  87% ] 127/200 VUs  1m44.0s/2m00.0s
+
+running (1m45.0s), 119/200 VUs, 2849 complete and 0 interrupted iterations
+nested-data-spike   [  87% ] 119/200 VUs  1m45.0s/2m00.0s
+
+running (1m46.0s), 116/200 VUs, 2887 complete and 0 interrupted iterations
+nested-data-spike   [  88% ] 116/200 VUs  1m46.0s/2m00.0s
+
+running (1m47.0s), 107/200 VUs, 2932 complete and 0 interrupted iterations
+nested-data-spike   [  89% ] 107/200 VUs  1m47.0s/2m00.0s
+
+running (1m48.0s), 102/200 VUs, 2971 complete and 0 interrupted iterations
+nested-data-spike   [  90% ] 102/200 VUs  1m48.0s/2m00.0s
+
+running (1m49.0s), 095/200 VUs, 3011 complete and 0 interrupted iterations
+nested-data-spike   [  91% ] 095/200 VUs  1m49.0s/2m00.0s
+
+running (1m50.0s), 090/200 VUs, 3049 complete and 0 interrupted iterations
+nested-data-spike   [  92% ] 090/200 VUs  1m50.0s/2m00.0s
+
+running (1m51.0s), 083/200 VUs, 3091 complete and 0 interrupted iterations
+nested-data-spike   [  92% ] 083/200 VUs  1m51.0s/2m00.0s
+
+running (1m52.0s), 077/200 VUs, 3127 complete and 0 interrupted iterations
+nested-data-spike   [  93% ] 077/200 VUs  1m52.0s/2m00.0s
+
+running (1m53.0s), 067/200 VUs, 3174 complete and 0 interrupted iterations
+nested-data-spike   [  94% ] 067/200 VUs  1m53.0s/2m00.0s
+
+running (1m54.0s), 064/200 VUs, 3213 complete and 0 interrupted iterations
+nested-data-spike   [  95% ] 064/200 VUs  1m54.0s/2m00.0s
+
+running (1m55.0s), 058/200 VUs, 3247 complete and 0 interrupted iterations
+nested-data-spike   [  96% ] 058/200 VUs  1m55.0s/2m00.0s
+
+running (1m56.0s), 048/200 VUs, 3291 complete and 0 interrupted iterations
+nested-data-spike   [  97% ] 048/200 VUs  1m56.0s/2m00.0s
+
+running (1m57.0s), 043/200 VUs, 3330 complete and 0 interrupted iterations
+nested-data-spike   [  97% ] 043/200 VUs  1m57.0s/2m00.0s
+
+running (1m58.0s), 037/200 VUs, 3368 complete and 0 interrupted iterations
+nested-data-spike   [  98% ] 037/200 VUs  1m58.0s/2m00.0s
+
+running (1m59.0s), 031/200 VUs, 3400 complete and 0 interrupted iterations
+nested-data-spike   [  99% ] 031/200 VUs  1m59.0s/2m00.0s
+
+running (2m00.0s), 023/200 VUs, 3429 complete and 0 interrupted iterations
+nested-data-spike   [ 100% ] 023/200 VUs  2m00.0s/2m00.0s
+
+running (2m01.0s), 003/200 VUs, 3449 complete and 0 interrupted iterations
+nested-data-spike ↓ [ 100% ] 023/200 VUs  2m0s
+time="2025-11-23T16:27:59Z" level=info msg="Scenario 2 Spike Test (REST OPTIMIZED) completed" source=console
+time="2025-11-23T16:27:59Z" level=info msg="Check if HTTP caching helped absorb the spike" source=console
+
+  █ THRESHOLDS
+
+    http_req_failed
+    ✓ 'rate<0.05' http_req_failed=0.00%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 113916   940.7947946310218/s
+    checks_succeeded...................: 100.00% 113916 out of 113916
+    checks_failed......................: 0.00% 0 out of 113916
+
+
+    HTTP
+    http_req_duration.......................................................: avg=185.16ms min=2.37ms med=175.94ms max=509.64ms p(90)=380.16ms p(95)=411.51ms
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=4.08µs min=0.75µs med=1.92µs max=14.05ms p(90)=3.50µs p(95)=4.38µs
+    http_req_connecting (TCP handshake).....................................: avg=1.46µs min=0.00µs med=0.00µs max=14.00ms p(90)=0.00µs p(95)=0.00µs
+    http_req_sending (request upload).......................................: avg=7.36µs min=2.17µs med=5.58µs max=1.29ms p(90)=11.88µs p(95)=15.67µs
+    http_req_waiting (server processing)....................................: avg=185.11ms min=2.34ms med=175.88ms max=509.57ms p(90)=380.11ms p(95)=411.46ms
+    http_req_receiving (response download)..................................: avg=37.06µs min=7.75µs med=31.13µs max=1.52ms p(90)=59.71µs p(95)=73.85µs
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 37972
+    http_reqs...............................................................: 37972  313.598265/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=3.04s min=1.03s med=2.99s max=5.67s p(90)=5.11s p(95)=5.43s
+    iterations..............................................................: 3452  28.508933/s
+    vus.....................................................................: 3      min=1          max=200
+    vus_max.................................................................: 200     min=200         max=200
+
+    NETWORK
+    data_received...........................................................: 214.4 MB 1.8 MB/s
+    data_sent...............................................................: 5.0 MB 41.9 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (2m01.1s), 000/200 VUs, 3452 complete and 0 interrupted iterations
+nested-data-spike ✓ [ 100% ] 000/200 VUs  2m0s

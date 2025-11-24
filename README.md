@@ -279,6 +279,6 @@ Jakub Mikolajczyk
 
 ## Acknowledgments
 
-- EventQL and EventREST applications implement identical business logic for fair comparison
+- EventQL and EventREST applications implrement identical business logic for fair comparison
 - Infrastructure designed to simulate realistic production constraints
 - Testing methodology based on industry best practices for load testing

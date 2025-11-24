@@ -1,0 +1,185 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     nested-data
+Test Type:    stress
+API:          rest
+Phase:        after_optimization
+Test Script:  k6/after_optimization/scenarios/02-nested-data/stress-rest.js
+Timestamp:    2025-11-23 17:42:29
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-11-23T16:42:29Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "after_optimization")
+  |> filter(fn: (r) => r["scenario"] == "02")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/DX2KSIjXoiURWFTrwPaXHFmWAcwC0fPs
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+nested-data-stress   [  94% ] 029/100 VUs  8m26.0s/9m00.0s
+
+running (8m27.0s), 029/100 VUs, 16894 complete and 0 interrupted iterations
+nested-data-stress   [  94% ] 029/100 VUs  8m27.0s/9m00.0s
+
+running (8m28.0s), 028/100 VUs, 16922 complete and 0 interrupted iterations
+nested-data-stress   [  94% ] 028/100 VUs  8m28.0s/9m00.0s
+
+running (8m29.0s), 027/100 VUs, 16950 complete and 0 interrupted iterations
+nested-data-stress   [  94% ] 027/100 VUs  8m29.0s/9m00.0s
+
+running (8m30.0s), 027/100 VUs, 16951 complete and 0 interrupted iterations
+nested-data-stress   [  94% ] 027/100 VUs  8m30.0s/9m00.0s
+
+running (8m31.0s), 025/100 VUs, 16978 complete and 0 interrupted iterations
+nested-data-stress   [  95% ] 025/100 VUs  8m31.0s/9m00.0s
+
+running (8m32.0s), 024/100 VUs, 16988 complete and 0 interrupted iterations
+nested-data-stress   [  95% ] 024/100 VUs  8m32.0s/9m00.0s
+
+running (8m33.0s), 024/100 VUs, 17012 complete and 0 interrupted iterations
+nested-data-stress   [  95% ] 024/100 VUs  8m33.0s/9m00.0s
+
+running (8m34.0s), 022/100 VUs, 17029 complete and 0 interrupted iterations
+nested-data-stress   [  95% ] 022/100 VUs  8m34.0s/9m00.0s
+
+running (8m35.0s), 022/100 VUs, 17038 complete and 0 interrupted iterations
+nested-data-stress   [  95% ] 022/100 VUs  8m35.0s/9m00.0s
+
+running (8m36.0s), 021/100 VUs, 17060 complete and 0 interrupted iterations
+nested-data-stress   [  96% ] 021/100 VUs  8m36.0s/9m00.0s
+
+running (8m37.0s), 021/100 VUs, 17061 complete and 0 interrupted iterations
+nested-data-stress   [  96% ] 021/100 VUs  8m37.0s/9m00.0s
+
+running (8m38.0s), 020/100 VUs, 17082 complete and 0 interrupted iterations
+nested-data-stress   [  96% ] 020/100 VUs  8m38.0s/9m00.0s
+
+running (8m39.0s), 018/100 VUs, 17102 complete and 0 interrupted iterations
+nested-data-stress   [  96% ] 018/100 VUs  8m39.0s/9m00.0s
+
+running (8m40.0s), 018/100 VUs, 17109 complete and 0 interrupted iterations
+nested-data-stress   [  96% ] 018/100 VUs  8m40.0s/9m00.0s
+
+running (8m41.0s), 017/100 VUs, 17120 complete and 0 interrupted iterations
+nested-data-stress   [  96% ] 017/100 VUs  8m41.0s/9m00.0s
+
+running (8m42.0s), 016/100 VUs, 17137 complete and 0 interrupted iterations
+nested-data-stress   [  97% ] 016/100 VUs  8m42.0s/9m00.0s
+
+running (8m43.0s), 015/100 VUs, 17144 complete and 0 interrupted iterations
+nested-data-stress   [  97% ] 015/100 VUs  8m43.0s/9m00.0s
+
+running (8m44.0s), 015/100 VUs, 17159 complete and 0 interrupted iterations
+nested-data-stress   [  97% ] 015/100 VUs  8m44.0s/9m00.0s
+
+running (8m45.0s), 013/100 VUs, 17174 complete and 0 interrupted iterations
+nested-data-stress   [  97% ] 013/100 VUs  8m45.0s/9m00.0s
+
+running (8m46.0s), 013/100 VUs, 17174 complete and 0 interrupted iterations
+nested-data-stress   [  97% ] 013/100 VUs  8m46.0s/9m00.0s
+
+running (8m47.0s), 012/100 VUs, 17187 complete and 0 interrupted iterations
+nested-data-stress   [  98% ] 012/100 VUs  8m47.0s/9m00.0s
+
+running (8m48.0s), 011/100 VUs, 17199 complete and 0 interrupted iterations
+nested-data-stress   [  98% ] 011/100 VUs  8m48.0s/9m00.0s
+
+running (8m49.0s), 010/100 VUs, 17210 complete and 0 interrupted iterations
+nested-data-stress   [  98% ] 010/100 VUs  8m49.0s/9m00.0s
+
+running (8m50.0s), 010/100 VUs, 17214 complete and 0 interrupted iterations
+nested-data-stress   [  98% ] 010/100 VUs  8m50.0s/9m00.0s
+
+running (8m51.0s), 009/100 VUs, 17220 complete and 0 interrupted iterations
+nested-data-stress   [  98% ] 009/100 VUs  8m51.0s/9m00.0s
+
+running (8m52.0s), 008/100 VUs, 17229 complete and 0 interrupted iterations
+nested-data-stress   [  99% ] 008/100 VUs  8m52.0s/9m00.0s
+
+running (8m53.0s), 007/100 VUs, 17237 complete and 0 interrupted iterations
+nested-data-stress   [  99% ] 007/100 VUs  8m53.0s/9m00.0s
+
+running (8m54.0s), 006/100 VUs, 17244 complete and 0 interrupted iterations
+nested-data-stress   [  99% ] 006/100 VUs  8m54.0s/9m00.0s
+
+running (8m55.0s), 005/100 VUs, 17250 complete and 0 interrupted iterations
+nested-data-stress   [  99% ] 005/100 VUs  8m55.0s/9m00.0s
+
+running (8m56.0s), 004/100 VUs, 17251 complete and 0 interrupted iterations
+nested-data-stress   [  99% ] 004/100 VUs  8m56.0s/9m00.0s
+
+running (8m57.0s), 004/100 VUs, 17255 complete and 0 interrupted iterations
+nested-data-stress   [  99% ] 004/100 VUs  8m57.0s/9m00.0s
+
+running (8m58.0s), 003/100 VUs, 17259 complete and 0 interrupted iterations
+nested-data-stress   [ 100% ] 003/100 VUs  8m58.0s/9m00.0s
+
+running (8m59.0s), 002/100 VUs, 17262 complete and 0 interrupted iterations
+nested-data-stress   [ 100% ] 002/100 VUs  8m59.0s/9m00.0s
+
+running (9m00.0s), 001/100 VUs, 17264 complete and 0 interrupted iterations
+nested-data-stress   [ 100% ] 001/100 VUs  9m00.0s/9m00.0s
+time="2025-11-23T16:51:30Z" level=info msg="Scenario 2 Stress Test (REST OPTIMIZED) completed" source=console
+time="2025-11-23T16:51:30Z" level=info msg="Review p95/p99 latencies to identify breaking point" source=console
+
+  █ THRESHOLDS
+
+    http_req_duration
+    ✓ 'p(95)<2000' http_req_duration=214.22ms
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 569745   1053.906340652474/s
+    checks_succeeded...................: 100.00% 569745 out of 569745
+    checks_failed......................: 0.00% 0 out of 569745
+
+
+    HTTP
+    http_req_duration.......................................................: avg=130.73ms min=2.25ms med=145.10ms max=826.60ms p(90)=198.34ms p(95)=214.22ms
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=2.52µs min=0.71µs med=1.83µs max=20.16ms p(90)=3.21µs p(95)=3.83µs
+    http_req_connecting (TCP handshake).....................................: avg=0.27µs min=0.00µs med=0.00µs max=20.08ms p(90)=0.00µs p(95)=0.00µs
+    http_req_sending (request upload).......................................: avg=7.00µs min=2.13µs med=5.54µs max=1.43ms p(90)=11.29µs p(95)=14.38µs
+    http_req_waiting (server processing)....................................: avg=130.68ms min=2.22ms med=145.06ms max=826.55ms p(90)=198.30ms p(95)=214.18ms
+    http_req_receiving (response download)..................................: avg=35.37µs min=-74.51µs med=30.21µs max=3.66ms p(90)=56.08µs p(95)=68.79µs
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 189915
+    http_reqs...............................................................: 189915  351.302114/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=2.44s min=1.03s med=2.64s max=3.92s p(90)=2.98s p(95)=3.07s
+    iterations..............................................................: 17265  31.936556/s
+    vus.....................................................................: 1      min=1          max=100
+    vus_max.................................................................: 100     min=100         max=100
+
+    NETWORK
+    data_received...........................................................: 1072.3 MB 2.0 MB/s
+    data_sent...............................................................: 24.8 MB 46.9 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (9m00.6s), 000/100 VUs, 17265 complete and 0 interrupted iterations
+nested-data-stress ✓ [ 100% ] 000/100 VUs  9m0s
