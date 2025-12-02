@@ -28,9 +28,8 @@ export default function () {
   // Execute GET request - REST will return ALL fields
   // We only need id and name, but we'll get description, date, place, category, timestamps, etc.
   // Limiting to 100 events for fair comparison with GraphQL
-  // Note: In phase 1 (before_optimization), we're NOT using pagination params
-  // Instead, the API returns first 100 events by default (server-side limit)
-  const response = restRequest('GET', '/events');
+  // Note: Must explicitly request per_page=100 to match GraphQL's first:100
+  const response = restRequest('GET', '/events?per_page=100');
 
   // Validate response
   checkResponse(response, 200, 'events fetched successfully');

@@ -66,7 +66,8 @@ export default function (data) {
   }
 
   // Step 1: Browse events (anonymous user behavior)
-  const eventsResponse = restRequest('GET', '/events');
+  // Limit to 100 events for reasonable response size
+  const eventsResponse = restRequest('GET', '/events?per_page=100');
   checkResponse(eventsResponse, 200, 'browse events successful');
 
   let events = [];

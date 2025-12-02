@@ -28,12 +28,16 @@ const TEST_USER_PASSWORD = 'password123';
 
 const BROWSE_EVENTS_QUERY = `
   query BrowseEvents {
-    events {
-      id
-      name
-      description
-      place
-      date
+    events(first: 100) {
+      edges {
+        node {
+          id
+          name
+          description
+          place
+          date
+        }
+      }
     }
   }
 `;
@@ -157,7 +161,9 @@ export default function (data) {
   let events = [];
   if (eventsResponse.status === 200) {
     const eventsData = JSON.parse(eventsResponse.body);
-    events = eventsData.data?.events || [];
+    // Extract events from Relay connection structure (edges.node)
+    const eventsConnection = eventsData.data?.events;
+    events = eventsConnection?.edges?.map(edge => edge.node) || [];
 
     // Debug: Log events count
     if (events.length === 0) {

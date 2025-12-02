@@ -1,0 +1,184 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     selective-fields
+Test Type:    load
+API:          rest
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/03-selective-fields/load-rest.js
+Timestamp:    2025-12-01 23:25:51
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-12-01T22:25:51Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "03")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/ZoqmniEP8tfpiGDql3S7VsRozYGh9ngo
+================================================================================
+TEST OUTPUT
+================================================================================
+
+
+running (4m28.0s), 28/50 VUs, 6699 complete and 0 interrupted iterations
+selective-fields   [  89% ] 28/50 VUs  4m28.0s/5m00.0s
+
+running (4m29.0s), 26/50 VUs, 6727 complete and 0 interrupted iterations
+selective-fields   [  90% ] 26/50 VUs  4m29.0s/5m00.0s
+
+running (4m30.0s), 26/50 VUs, 6746 complete and 0 interrupted iterations
+selective-fields   [  90% ] 26/50 VUs  4m30.0s/5m00.0s
+
+running (4m31.0s), 26/50 VUs, 6768 complete and 0 interrupted iterations
+selective-fields   [  90% ] 26/50 VUs  4m31.0s/5m00.0s
+
+running (4m32.0s), 24/50 VUs, 6793 complete and 0 interrupted iterations
+selective-fields   [  91% ] 24/50 VUs  4m32.0s/5m00.0s
+
+running (4m33.0s), 23/50 VUs, 6812 complete and 0 interrupted iterations
+selective-fields   [  91% ] 23/50 VUs  4m33.0s/5m00.0s
+
+running (4m34.0s), 23/50 VUs, 6833 complete and 0 interrupted iterations
+selective-fields   [  91% ] 23/50 VUs  4m34.0s/5m00.0s
+
+running (4m35.0s), 22/50 VUs, 6855 complete and 0 interrupted iterations
+selective-fields   [  92% ] 22/50 VUs  4m35.0s/5m00.0s
+
+running (4m36.0s), 21/50 VUs, 6875 complete and 0 interrupted iterations
+selective-fields   [  92% ] 21/50 VUs  4m36.0s/5m00.0s
+
+running (4m37.0s), 20/50 VUs, 6892 complete and 0 interrupted iterations
+selective-fields   [  92% ] 20/50 VUs  4m37.0s/5m00.0s
+
+running (4m38.0s), 20/50 VUs, 6912 complete and 0 interrupted iterations
+selective-fields   [  93% ] 20/50 VUs  4m38.0s/5m00.0s
+
+running (4m39.0s), 19/50 VUs, 6932 complete and 0 interrupted iterations
+selective-fields   [  93% ] 19/50 VUs  4m39.0s/5m00.0s
+
+running (4m40.0s), 18/50 VUs, 6949 complete and 0 interrupted iterations
+selective-fields   [  93% ] 18/50 VUs  4m40.0s/5m00.0s
+
+running (4m41.0s), 17/50 VUs, 6966 complete and 0 interrupted iterations
+selective-fields   [  94% ] 17/50 VUs  4m41.0s/5m00.0s
+
+running (4m42.0s), 16/50 VUs, 6982 complete and 0 interrupted iterations
+selective-fields   [  94% ] 16/50 VUs  4m42.0s/5m00.0s
+
+running (4m43.0s), 15/50 VUs, 6997 complete and 0 interrupted iterations
+selective-fields   [  94% ] 15/50 VUs  4m43.0s/5m00.0s
+
+running (4m44.0s), 14/50 VUs, 7011 complete and 0 interrupted iterations
+selective-fields   [  95% ] 14/50 VUs  4m44.0s/5m00.0s
+
+running (4m45.0s), 14/50 VUs, 7025 complete and 0 interrupted iterations
+selective-fields   [  95% ] 14/50 VUs  4m45.0s/5m00.0s
+
+running (4m46.0s), 13/50 VUs, 7038 complete and 0 interrupted iterations
+selective-fields   [  95% ] 13/50 VUs  4m46.0s/5m00.0s
+
+running (4m47.0s), 12/50 VUs, 7050 complete and 0 interrupted iterations
+selective-fields   [  96% ] 12/50 VUs  4m47.0s/5m00.0s
+
+running (4m48.0s), 11/50 VUs, 7061 complete and 0 interrupted iterations
+selective-fields   [  96% ] 11/50 VUs  4m48.0s/5m00.0s
+
+running (4m49.0s), 10/50 VUs, 7072 complete and 0 interrupted iterations
+selective-fields   [  96% ] 10/50 VUs  4m49.0s/5m00.0s
+
+running (4m50.0s), 09/50 VUs, 7081 complete and 0 interrupted iterations
+selective-fields   [  97% ] 09/50 VUs  4m50.0s/5m00.0s
+
+running (4m51.0s), 08/50 VUs, 7090 complete and 0 interrupted iterations
+selective-fields   [  97% ] 08/50 VUs  4m51.0s/5m00.0s
+
+running (4m52.0s), 08/50 VUs, 7095 complete and 0 interrupted iterations
+selective-fields   [  97% ] 08/50 VUs  4m52.0s/5m00.0s
+
+running (4m53.0s), 07/50 VUs, 7103 complete and 0 interrupted iterations
+selective-fields   [  98% ] 07/50 VUs  4m53.0s/5m00.0s
+
+running (4m54.0s), 06/50 VUs, 7110 complete and 0 interrupted iterations
+selective-fields   [  98% ] 06/50 VUs  4m54.0s/5m00.0s
+
+running (4m55.0s), 05/50 VUs, 7116 complete and 0 interrupted iterations
+selective-fields   [  98% ] 05/50 VUs  4m55.0s/5m00.0s
+
+running (4m56.0s), 04/50 VUs, 7121 complete and 0 interrupted iterations
+selective-fields   [  99% ] 04/50 VUs  4m56.0s/5m00.0s
+
+running (4m57.0s), 03/50 VUs, 7125 complete and 0 interrupted iterations
+selective-fields   [  99% ] 03/50 VUs  4m57.0s/5m00.0s
+
+running (4m58.0s), 03/50 VUs, 7128 complete and 0 interrupted iterations
+selective-fields   [  99% ] 03/50 VUs  4m58.0s/5m00.0s
+
+running (4m59.0s), 02/50 VUs, 7131 complete and 0 interrupted iterations
+selective-fields   [ 100% ] 02/50 VUs  4m59.0s/5m00.0s
+
+running (5m00.0s), 01/50 VUs, 7133 complete and 0 interrupted iterations
+selective-fields   [ 100% ] 01/50 VUs  5m00.0s/5m00.0s
+time="2025-12-01T22:30:52Z" level=info msg="Scenario 4 (REST) completed" source=console
+time="2025-12-01T22:30:52Z" level=info msg="Check data_received metric - should be 60-80% more than GraphQL" source=console
+
+  █ THRESHOLDS
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+    http_req_duration
+    ✗ 'p(95)<500' http_req_duration=956.71ms
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 21402   71.15647702914517/s
+    checks_succeeded...................: 100.00% 21402 out of 21402
+    checks_failed......................: 0.00% 0 out of 21402
+
+
+    HTTP
+    http_req_duration.......................................................: avg=689.41ms min=41.20ms med=835.28ms max=1.17s p(90)=925.21ms p(95)=956.71ms
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=5.54µs min=1.17µs med=3.63µs max=2.28ms p(90)=5.00µs p(95)=5.83µs
+    http_req_connecting (TCP handshake).....................................: avg=1.20µs min=0.00µs med=0.00µs max=1.50ms p(90)=0.00µs p(95)=0.00µs
+    http_req_sending (request upload).......................................: avg=12.38µs min=3.08µs med=11.38µs max=777.50µs p(90)=15.54µs p(95)=18.22µs
+    http_req_waiting (server processing)....................................: avg=689.31ms min=41.09ms med=835.17ms max=1.17s p(90)=925.10ms p(95)=956.59ms
+    http_req_receiving (response download)..................................: avg=87.84µs min=19.54µs med=82.29µs max=1.63ms p(90)=114.03µs p(95)=128.04µs
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 7134
+    http_reqs...............................................................: 7134  23.718826/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=1.69s min=1.04s med=1.84s max=2.17s p(90)=1.93s p(95)=1.96s
+    iterations..............................................................: 7134  23.718826/s
+    vus.....................................................................: 1      min=1          max=50
+    vus_max.................................................................: 50     min=50         max=50
+
+    NETWORK
+    data_received...........................................................: 618.5 MB 2.1 MB/s
+    data_sent...............................................................: 898.7 kB 3.0 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (5m00.8s), 00/50 VUs, 7134 complete and 0 interrupted iterations
+selective-fields ✓ [ 100% ] 00/50 VUs  5m0s
+time="2025-12-01T22:30:52Z" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"

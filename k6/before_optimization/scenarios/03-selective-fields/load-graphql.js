@@ -26,11 +26,16 @@ export const options = {
 // GraphQL query requesting ONLY id and name fields (2 out of ~10 available fields)
 // This is the key difference: we explicitly request only what we need
 // Limiting to 100 events for fair comparison with REST
+// Note: GraphQL uses Relay-style connections (edges/node structure)
 const QUERY = `
   query GetEventsMinimal {
     events(first: 100) {
-      id
-      name
+      edges {
+        node {
+          id
+          name
+        }
+      }
     }
   }
 `;
