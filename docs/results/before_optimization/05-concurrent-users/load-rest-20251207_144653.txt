@@ -1,0 +1,225 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     concurrent-users
+Test Type:    load
+API:          rest
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/05-concurrent-users/load-rest.js
+Timestamp:    2025-12-07 14:46:53
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-12-07T13:46:53Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "05")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/loM36kH6vrQAwsoTqHFawckKca630wNs
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+concurrent-users   [  74% ] 20 VUs  01m29.8s/20m0s  2223/3000 shared iters
+
+running (01m31.0s), 20/20 VUs, 2253 complete and 0 interrupted iterations
+concurrent-users   [  75% ] 20 VUs  01m30.8s/20m0s  2253/3000 shared iters
+
+running (01m32.0s), 20/20 VUs, 2276 complete and 0 interrupted iterations
+concurrent-users   [  76% ] 20 VUs  01m31.8s/20m0s  2276/3000 shared iters
+
+running (01m33.0s), 20/20 VUs, 2303 complete and 0 interrupted iterations
+concurrent-users   [  77% ] 20 VUs  01m32.8s/20m0s  2303/3000 shared iters
+
+running (01m34.0s), 20/20 VUs, 2330 complete and 0 interrupted iterations
+concurrent-users   [  78% ] 20 VUs  01m33.8s/20m0s  2330/3000 shared iters
+
+running (01m35.0s), 20/20 VUs, 2354 complete and 0 interrupted iterations
+concurrent-users   [  78% ] 20 VUs  01m34.8s/20m0s  2354/3000 shared iters
+
+running (01m36.0s), 20/20 VUs, 2385 complete and 0 interrupted iterations
+concurrent-users   [  80% ] 20 VUs  01m35.8s/20m0s  2385/3000 shared iters
+
+running (01m37.0s), 20/20 VUs, 2410 complete and 0 interrupted iterations
+concurrent-users   [  80% ] 20 VUs  01m36.8s/20m0s  2410/3000 shared iters
+
+running (01m38.0s), 20/20 VUs, 2436 complete and 0 interrupted iterations
+concurrent-users   [  81% ] 20 VUs  01m37.8s/20m0s  2436/3000 shared iters
+
+running (01m39.0s), 20/20 VUs, 2459 complete and 0 interrupted iterations
+concurrent-users   [  82% ] 20 VUs  01m38.8s/20m0s  2459/3000 shared iters
+
+running (01m40.0s), 20/20 VUs, 2485 complete and 0 interrupted iterations
+concurrent-users   [  83% ] 20 VUs  01m39.8s/20m0s  2485/3000 shared iters
+
+running (01m41.0s), 20/20 VUs, 2514 complete and 0 interrupted iterations
+concurrent-users   [  84% ] 20 VUs  01m40.8s/20m0s  2514/3000 shared iters
+
+running (01m42.0s), 20/20 VUs, 2543 complete and 0 interrupted iterations
+concurrent-users   [  85% ] 20 VUs  01m41.8s/20m0s  2543/3000 shared iters
+
+running (01m43.0s), 20/20 VUs, 2571 complete and 0 interrupted iterations
+concurrent-users   [  86% ] 20 VUs  01m42.8s/20m0s  2571/3000 shared iters
+
+running (01m44.0s), 20/20 VUs, 2597 complete and 0 interrupted iterations
+concurrent-users   [  87% ] 20 VUs  01m43.8s/20m0s  2597/3000 shared iters
+
+running (01m45.0s), 20/20 VUs, 2622 complete and 0 interrupted iterations
+concurrent-users   [  87% ] 20 VUs  01m44.8s/20m0s  2622/3000 shared iters
+
+running (01m46.0s), 20/20 VUs, 2644 complete and 0 interrupted iterations
+concurrent-users   [  88% ] 20 VUs  01m45.8s/20m0s  2644/3000 shared iters
+
+running (01m47.0s), 20/20 VUs, 2670 complete and 0 interrupted iterations
+concurrent-users   [  89% ] 20 VUs  01m46.8s/20m0s  2670/3000 shared iters
+
+running (01m48.0s), 20/20 VUs, 2694 complete and 0 interrupted iterations
+concurrent-users   [  90% ] 20 VUs  01m47.8s/20m0s  2694/3000 shared iters
+
+running (01m49.0s), 20/20 VUs, 2716 complete and 0 interrupted iterations
+concurrent-users   [  91% ] 20 VUs  01m48.8s/20m0s  2716/3000 shared iters
+
+running (01m50.0s), 20/20 VUs, 2742 complete and 0 interrupted iterations
+concurrent-users   [  91% ] 20 VUs  01m49.8s/20m0s  2742/3000 shared iters
+
+running (01m51.0s), 20/20 VUs, 2767 complete and 0 interrupted iterations
+concurrent-users   [  92% ] 20 VUs  01m50.8s/20m0s  2767/3000 shared iters
+
+running (01m52.0s), 20/20 VUs, 2792 complete and 0 interrupted iterations
+concurrent-users   [  93% ] 20 VUs  01m51.8s/20m0s  2792/3000 shared iters
+
+running (01m53.0s), 20/20 VUs, 2813 complete and 0 interrupted iterations
+concurrent-users   [  94% ] 20 VUs  01m52.8s/20m0s  2813/3000 shared iters
+
+running (01m54.0s), 20/20 VUs, 2839 complete and 0 interrupted iterations
+concurrent-users   [  95% ] 20 VUs  01m53.8s/20m0s  2839/3000 shared iters
+
+running (01m55.0s), 20/20 VUs, 2862 complete and 0 interrupted iterations
+concurrent-users   [  95% ] 20 VUs  01m54.8s/20m0s  2862/3000 shared iters
+
+running (01m56.0s), 20/20 VUs, 2890 complete and 0 interrupted iterations
+concurrent-users   [  96% ] 20 VUs  01m55.8s/20m0s  2890/3000 shared iters
+
+running (01m57.0s), 20/20 VUs, 2913 complete and 0 interrupted iterations
+concurrent-users   [  97% ] 20 VUs  01m56.8s/20m0s  2913/3000 shared iters
+
+running (01m58.0s), 20/20 VUs, 2937 complete and 0 interrupted iterations
+concurrent-users   [  98% ] 20 VUs  01m57.8s/20m0s  2937/3000 shared iters
+
+running (01m59.0s), 20/20 VUs, 2961 complete and 0 interrupted iterations
+concurrent-users   [  99% ] 20 VUs  01m58.8s/20m0s  2961/3000 shared iters
+
+running (02m00.0s), 14/20 VUs, 2986 complete and 0 interrupted iterations
+concurrent-users   [ 100% ] 20 VUs  01m59.8s/20m0s  2986/3000 shared iters
+time="2025-12-07T13:48:54Z" level=info msg="Scenario 5 (REST) completed" source=console
+time="2025-12-07T13:48:54Z" level=info msg="Note: Created orders should be cleaned up with cleanup-test-data.sh" source=console
+
+  █ THRESHOLDS
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+    http_req_duration
+    ✗ 'p(95)<500' http_req_duration=539.42ms
+    ✓ 'p(99)<1000' http_req_duration=668.36ms
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 36000   298.81272532173074/s
+    checks_succeeded...................: 100.00% 36000 out of 36000
+    checks_failed......................: 0.00% 0 out of 36000
+
+
+    HTTP
+    http_req_duration.......................................................: avg=198.33ms min=1.22ms med=102.17ms max=993.31ms p(90)=483.88ms p(95)=539.42ms p(99)=668.36ms
+
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=3.22µs min=0.58µs med=2.29µs max=517.92µs p(90)=4.67µs p(95)=5.58µs p(99)=9.63µs
+
+    http_req_connecting (TCP handshake).....................................: avg=0.37µs min=0.00µs med=0.00µs max=506.92µs p(90)=0.00µs p(95)=0.00µs p(99)=0.00µs
+
+    http_req_sending (request upload).......................................: avg=13.16µs min=1.71µs med=9.21µs max=4.59ms p(90)=18.67µs p(95)=23.21µs p(99)=46.42µs
+
+    http_req_waiting (server processing)....................................: avg=198.24ms min=1.19ms med=102.07ms max=993.28ms p(90)=483.82ms p(95)=539.23ms p(99)=668.28ms
+
+    http_req_receiving (response download)..................................: avg=77.72µs min=6.67µs med=52.42µs max=7.81ms p(90)=129.17µs p(95)=163.29µs p(99)=294.79µs
+
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 12001
+    http_reqs...............................................................: 12001  99.612542/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=799.75ms min=206.87ms med=795.26ms max=1.50s p(90)=1.06s p(95)=1.12s p(99)=1.27s
+
+    iterations..............................................................: 3000  24.901060/s
+    vus.....................................................................: 14      min=14          max=20
+    vus_max.................................................................: 20     min=20         max=20
+
+    NETWORK
+    data_received...........................................................: 382.8 MB 3.2 MB/s
+    data_sent...............................................................: 2.2 MB 18.5 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (02m00.5s), 00/20 VUs, 3000 complete and 0 interrupted iterations
+concurrent-users ✓ [ 100% ] 20 VUs  02m00.3s/20m0s  3000/3000 shared iters
+time="2025-12-07T13:48:54Z" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"
+
+=== STANDARD DEVIATION ANALYSIS ===
+
+=== Standard Deviation Analysis ===
+
+http_req_duration:
+  Mean: 198.33ms
+  Std Dev: 185.01ms
+  Sample count: 12001
+
+http_req_waiting:
+  Mean: 198.24ms
+  Std Dev: 184.99ms
+  Sample count: 12001
+
+http_req_blocked:
+  Mean: 3.22µs
+  Std Dev: 12.32µs
+  Sample count: 12001
+
+http_req_connecting:
+  Mean: 0.37µs
+  Std Dev: 10.73µs
+  Sample count: 12001
+
+http_req_sending:
+  Mean: 13.16µs
+  Std Dev: 63.74µs
+  Sample count: 12001
+
+http_req_receiving:
+  Mean: 77.72µs
+  Std Dev: 181.09µs
+  Sample count: 12001
+
+iteration_duration:
+  Mean: 799.75ms
+  Std Dev: 194.43ms
+  Sample count: 3000
+

@@ -1,0 +1,206 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     write-operations
+Test Type:    load
+API:          graphql
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/04-write-operations/load-graphql.js
+Timestamp:    2025-12-07 01:54:07
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-12-07T00:54:07Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "graphql")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "04")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/qgCAGwU7DqIo6NiD8W9eJDnx9E0XZxz8
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+     execution: local
+        script: /k6/before_optimization/scenarios/04-write-operations/load-graphql.js
+        output: InfluxDBv2 (http://influxdb:8086), json (/results/load-graphql-20251207_015407.json)
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 10m30s max duration (incl. graceful stop):
+              * write-operations: 10000 iterations shared among 20 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2025-12-07T00:54:08Z" level=info msg="Starting Scenario 4: Write Operations - GraphQL Load Test" source=console
+time="2025-12-07T00:54:08Z" level=info msg="Authenticating admin test user..." source=console
+time="2025-12-07T00:54:08Z" level=info msg="Authentication successful" source=console
+time="2025-12-07T00:54:08Z" level=info msg="Testing: createEvent mutation (admin)" source=console
+time="2025-12-07T00:54:08Z" level=info msg="Configuration: shared-iterations, 20 VUs, 10000 iterations" source=console
+
+running (00m01.0s), 20/20 VUs, 294 complete and 0 interrupted iterations
+write-operations   [   3% ] 20 VUs  00m00.7s/10m0s  00294/10000 shared iters
+
+running (00m02.0s), 20/20 VUs, 733 complete and 0 interrupted iterations
+write-operations   [   7% ] 20 VUs  00m01.7s/10m0s  00733/10000 shared iters
+
+running (00m03.0s), 20/20 VUs, 1260 complete and 0 interrupted iterations
+write-operations   [  13% ] 20 VUs  00m02.7s/10m0s  01260/10000 shared iters
+
+running (00m04.0s), 20/20 VUs, 1834 complete and 0 interrupted iterations
+write-operations   [  18% ] 20 VUs  00m03.7s/10m0s  01834/10000 shared iters
+
+running (00m05.0s), 20/20 VUs, 2417 complete and 0 interrupted iterations
+write-operations   [  24% ] 20 VUs  00m04.7s/10m0s  02417/10000 shared iters
+
+running (00m06.0s), 20/20 VUs, 2984 complete and 0 interrupted iterations
+write-operations   [  30% ] 20 VUs  00m05.7s/10m0s  02984/10000 shared iters
+
+running (00m07.0s), 20/20 VUs, 3554 complete and 0 interrupted iterations
+write-operations   [  36% ] 20 VUs  00m06.7s/10m0s  03554/10000 shared iters
+
+running (00m08.0s), 20/20 VUs, 4119 complete and 0 interrupted iterations
+write-operations   [  41% ] 20 VUs  00m07.7s/10m0s  04119/10000 shared iters
+
+running (00m09.0s), 20/20 VUs, 4693 complete and 0 interrupted iterations
+write-operations   [  47% ] 20 VUs  00m08.7s/10m0s  04693/10000 shared iters
+
+running (00m10.0s), 20/20 VUs, 5275 complete and 0 interrupted iterations
+write-operations   [  53% ] 20 VUs  00m09.7s/10m0s  05276/10000 shared iters
+
+running (00m11.0s), 20/20 VUs, 5843 complete and 0 interrupted iterations
+write-operations   [  58% ] 20 VUs  00m10.7s/10m0s  05843/10000 shared iters
+
+running (00m12.0s), 20/20 VUs, 6414 complete and 0 interrupted iterations
+write-operations   [  64% ] 20 VUs  00m11.7s/10m0s  06414/10000 shared iters
+
+running (00m13.0s), 20/20 VUs, 6966 complete and 0 interrupted iterations
+write-operations   [  70% ] 20 VUs  00m12.7s/10m0s  06966/10000 shared iters
+
+running (00m14.0s), 20/20 VUs, 7533 complete and 0 interrupted iterations
+write-operations   [  75% ] 20 VUs  00m13.7s/10m0s  07533/10000 shared iters
+
+running (00m15.0s), 20/20 VUs, 8107 complete and 0 interrupted iterations
+write-operations   [  81% ] 20 VUs  00m14.7s/10m0s  08107/10000 shared iters
+
+running (00m16.0s), 20/20 VUs, 8687 complete and 0 interrupted iterations
+write-operations   [  87% ] 20 VUs  00m15.7s/10m0s  08687/10000 shared iters
+
+running (00m17.0s), 20/20 VUs, 9255 complete and 0 interrupted iterations
+write-operations   [  93% ] 20 VUs  00m16.7s/10m0s  09255/10000 shared iters
+
+running (00m18.0s), 20/20 VUs, 9819 complete and 0 interrupted iterations
+write-operations   [  98% ] 20 VUs  00m17.7s/10m0s  09819/10000 shared iters
+time="2025-12-07T00:54:26Z" level=info msg="Scenario 4 (GraphQL) completed" source=console
+time="2025-12-07T00:54:26Z" level=info msg="Note: Test events remain in database for verification" source=console
+
+  █ THRESHOLDS
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+    http_req_duration
+    ✓ 'p(95)<500' http_req_duration=61.64ms
+    ✓ 'p(99)<1000' http_req_duration=80.64ms
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 50000   2733.161230813359/s
+    checks_succeeded...................: 100.00% 50000 out of 50000
+    checks_failed......................: 0.00% 0 out of 50000
+
+
+    HTTP
+    http_req_duration.......................................................: avg=35.87ms min=13.85ms med=32.54ms max=287.93ms p(90)=53.07ms p(95)=61.64ms p(99)=80.64ms
+
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=2.80µs min=0.79µs med=1.71µs max=1.28ms p(90)=2.63µs p(95)=3.17µs p(99)=8.63µs
+
+    http_req_connecting (TCP handshake).....................................: avg=0.39µs min=0.00µs med=0.00µs max=507.25µs p(90)=0.00µs p(95)=0.00µs p(99)=0.00µs
+
+    http_req_sending (request upload).......................................: avg=10.09µs min=3.00µs med=6.63µs max=4.45ms p(90)=10.88µs p(95)=14.00µs p(99)=33.13µs
+
+    http_req_waiting (server processing)....................................: avg=35.82ms min=13.81ms med=32.50ms max=287.71ms p(90)=53.03ms p(95)=61.54ms p(99)=80.59ms
+
+    http_req_receiving (response download)..................................: avg=33.40µs min=8.92µs med=28.75µs max=1.63ms p(90)=48.21µs p(95)=60.08µs p(99)=109.46µs
+
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 10001
+    http_reqs...............................................................: 10001  546.686909/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=35.99ms min=13.97ms med=32.70ms max=144.47ms p(90)=53.22ms p(95)=61.80ms p(99)=80.46ms
+
+    iterations..............................................................: 10000  546.632246/s
+    vus.....................................................................: 20      min=20          max=20
+    vus_max.................................................................: 20     min=20         max=20
+
+    NETWORK
+    data_received...........................................................: 6.9 MB 386.6 kB/s
+    data_sent...............................................................: 6.7 MB 373.2 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (00m18.3s), 00/20 VUs, 10000 complete and 0 interrupted iterations
+write-operations ✓ [ 100% ] 20 VUs  00m18.0s/10m0s  10000/10000 shared iters
+
+=== STANDARD DEVIATION ANALYSIS ===
+
+=== Standard Deviation Analysis ===
+
+http_req_duration:
+  Mean: 35.87ms
+  Std Dev: 13.38ms
+  Sample count: 10001
+
+http_req_waiting:
+  Mean: 35.82ms
+  Std Dev: 13.37ms
+  Sample count: 10001
+
+http_req_blocked:
+  Mean: 2.80µs
+  Std Dev: 20.66µs
+  Sample count: 10001
+
+http_req_connecting:
+  Mean: 0.39µs
+  Std Dev: 9.97µs
+  Sample count: 10001
+
+http_req_sending:
+  Mean: 10.09µs
+  Std Dev: 68.86µs
+  Sample count: 10001
+
+http_req_receiving:
+  Mean: 33.40µs
+  Std Dev: 38.86µs
+  Sample count: 10001
+
+iteration_duration:
+  Mean: 35.99ms
+  Std Dev: 13.15ms
+  Sample count: 10000
+

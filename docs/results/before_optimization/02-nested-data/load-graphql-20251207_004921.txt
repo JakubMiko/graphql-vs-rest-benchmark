@@ -1,0 +1,225 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     nested-data
+Test Type:    load
+API:          graphql
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/02-nested-data/load-graphql.js
+Timestamp:    2025-12-07 00:49:21
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-12-06T23:49:21Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "graphql")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "02")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/nKoDVhy2Ng213XlTqYtpIWYvJf4CPm89
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+running (02m43.0s), 20/20 VUs, 6720 complete and 0 interrupted iterations
+nested-data   [  84% ] 20 VUs  02m43.0s/10m0s  6720/8000 shared iters
+
+running (02m44.0s), 20/20 VUs, 6760 complete and 0 interrupted iterations
+nested-data   [  84% ] 20 VUs  02m44.0s/10m0s  6760/8000 shared iters
+
+running (02m45.0s), 20/20 VUs, 6802 complete and 0 interrupted iterations
+nested-data   [  85% ] 20 VUs  02m45.0s/10m0s  6802/8000 shared iters
+
+running (02m46.0s), 20/20 VUs, 6846 complete and 0 interrupted iterations
+nested-data   [  86% ] 20 VUs  02m46.0s/10m0s  6846/8000 shared iters
+
+running (02m47.0s), 20/20 VUs, 6882 complete and 0 interrupted iterations
+nested-data   [  86% ] 20 VUs  02m47.0s/10m0s  6882/8000 shared iters
+
+running (02m48.0s), 20/20 VUs, 6926 complete and 0 interrupted iterations
+nested-data   [  87% ] 20 VUs  02m48.0s/10m0s  6926/8000 shared iters
+
+running (02m49.0s), 20/20 VUs, 6971 complete and 0 interrupted iterations
+nested-data   [  87% ] 20 VUs  02m49.0s/10m0s  6971/8000 shared iters
+
+running (02m50.0s), 20/20 VUs, 7009 complete and 0 interrupted iterations
+nested-data   [  88% ] 20 VUs  02m50.0s/10m0s  7009/8000 shared iters
+
+running (02m51.0s), 20/20 VUs, 7053 complete and 0 interrupted iterations
+nested-data   [  88% ] 20 VUs  02m51.0s/10m0s  7053/8000 shared iters
+
+running (02m52.0s), 20/20 VUs, 7093 complete and 0 interrupted iterations
+nested-data   [  89% ] 20 VUs  02m52.0s/10m0s  7093/8000 shared iters
+
+running (02m53.0s), 20/20 VUs, 7135 complete and 0 interrupted iterations
+nested-data   [  89% ] 20 VUs  02m53.0s/10m0s  7135/8000 shared iters
+
+running (02m54.0s), 20/20 VUs, 7184 complete and 0 interrupted iterations
+nested-data   [  90% ] 20 VUs  02m54.0s/10m0s  7184/8000 shared iters
+
+running (02m55.0s), 20/20 VUs, 7221 complete and 0 interrupted iterations
+nested-data   [  90% ] 20 VUs  02m55.0s/10m0s  7221/8000 shared iters
+
+running (02m56.0s), 20/20 VUs, 7263 complete and 0 interrupted iterations
+nested-data   [  91% ] 20 VUs  02m56.0s/10m0s  7263/8000 shared iters
+
+running (02m57.0s), 20/20 VUs, 7309 complete and 0 interrupted iterations
+nested-data   [  91% ] 20 VUs  02m57.0s/10m0s  7309/8000 shared iters
+
+running (02m58.0s), 20/20 VUs, 7347 complete and 0 interrupted iterations
+nested-data   [  92% ] 20 VUs  02m58.0s/10m0s  7347/8000 shared iters
+
+running (02m59.0s), 20/20 VUs, 7392 complete and 0 interrupted iterations
+nested-data   [  92% ] 20 VUs  02m59.0s/10m0s  7392/8000 shared iters
+
+running (03m00.0s), 20/20 VUs, 7429 complete and 0 interrupted iterations
+nested-data   [  93% ] 20 VUs  03m00.0s/10m0s  7429/8000 shared iters
+
+running (03m01.0s), 20/20 VUs, 7473 complete and 0 interrupted iterations
+nested-data   [  93% ] 20 VUs  03m01.0s/10m0s  7473/8000 shared iters
+
+running (03m02.0s), 20/20 VUs, 7519 complete and 0 interrupted iterations
+nested-data   [  94% ] 20 VUs  03m02.0s/10m0s  7519/8000 shared iters
+
+running (03m03.0s), 20/20 VUs, 7557 complete and 0 interrupted iterations
+nested-data   [  94% ] 20 VUs  03m03.0s/10m0s  7557/8000 shared iters
+
+running (03m04.0s), 20/20 VUs, 7598 complete and 0 interrupted iterations
+nested-data   [  95% ] 20 VUs  03m04.0s/10m0s  7598/8000 shared iters
+
+running (03m05.0s), 20/20 VUs, 7637 complete and 0 interrupted iterations
+nested-data   [  95% ] 20 VUs  03m05.0s/10m0s  7637/8000 shared iters
+
+running (03m06.0s), 20/20 VUs, 7681 complete and 0 interrupted iterations
+nested-data   [  96% ] 20 VUs  03m06.0s/10m0s  7681/8000 shared iters
+
+running (03m07.0s), 20/20 VUs, 7724 complete and 0 interrupted iterations
+nested-data   [  97% ] 20 VUs  03m07.0s/10m0s  7724/8000 shared iters
+
+running (03m08.0s), 20/20 VUs, 7769 complete and 0 interrupted iterations
+nested-data   [  97% ] 20 VUs  03m08.0s/10m0s  7769/8000 shared iters
+
+running (03m09.0s), 20/20 VUs, 7807 complete and 0 interrupted iterations
+nested-data   [  98% ] 20 VUs  03m09.0s/10m0s  7807/8000 shared iters
+
+running (03m10.0s), 20/20 VUs, 7850 complete and 0 interrupted iterations
+nested-data   [  98% ] 20 VUs  03m10.0s/10m0s  7850/8000 shared iters
+
+running (03m11.0s), 20/20 VUs, 7892 complete and 0 interrupted iterations
+nested-data   [  99% ] 20 VUs  03m11.0s/10m0s  7892/8000 shared iters
+
+running (03m12.0s), 20/20 VUs, 7930 complete and 0 interrupted iterations
+nested-data   [  99% ] 20 VUs  03m12.0s/10m0s  7930/8000 shared iters
+
+running (03m13.0s), 20/20 VUs, 7978 complete and 0 interrupted iterations
+nested-data   [ 100% ] 20 VUs  03m13.0s/10m0s  7978/8000 shared iters
+time="2025-12-06T23:52:35Z" level=info msg="Scenario 2 (GraphQL) completed" source=console
+
+  █ THRESHOLDS
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+    http_req_duration
+    ✗ 'p(95)<500' http_req_duration=630.74ms
+    ✓ 'p(99)<1000' http_req_duration=709.19ms
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 40000   206.80918107793335/s
+    checks_succeeded...................: 100.00% 40000 out of 40000
+    checks_failed......................: 0.00% 0 out of 40000
+
+
+    HTTP
+    http_req_duration.......................................................: avg=481.44ms min=146.08ms med=485.79ms max=1.16s p(90)=602.52ms p(95)=630.74ms p(99)=709.19ms
+
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=8.90µs min=0.92µs med=2.71µs max=2.49ms p(90)=5.00µs p(95)=6.13µs p(99)=9.54µs
+
+    http_req_connecting (TCP handshake).....................................: avg=0.45µs min=0.00µs med=0.00µs max=465.71µs p(90)=0.00µs p(95)=0.00µs p(99)=0.00µs
+
+    http_req_sending (request upload).......................................: avg=19.09µs min=3.04µs med=11.33µs max=3.95ms p(90)=21.96µs p(95)=27.08µs p(99)=64.50µs
+
+    http_req_waiting (server processing)....................................: avg=481.33ms min=146.03ms med=485.69ms max=1.16s p(90)=602.42ms p(95)=630.66ms p(99)=709.15ms
+
+    http_req_receiving (response download)..................................: avg=84.76µs min=14.21µs med=62.77µs max=5.68ms p(90)=122.60µs p(95)=156.67µs p(99)=527.21µs
+
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 8000
+    http_reqs...............................................................: 8000  41.361836/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=483.27ms min=148.09ms med=487.72ms max=1.16s p(90)=604.22ms p(95)=632.74ms p(99)=710.65ms
+
+    iterations..............................................................: 8000  41.361836/s
+    vus.....................................................................: 20      min=20          max=20
+    vus_max.................................................................: 20     min=20         max=20
+
+    NETWORK
+    data_received...........................................................: 134.5 MB 711.9 kB/s
+    data_sent...............................................................: 3.5 MB 18.8 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (03m13.4s), 00/20 VUs, 8000 complete and 0 interrupted iterations
+nested-data ✓ [ 100% ] 20 VUs  03m13.4s/10m0s  8000/8000 shared iters
+time="2025-12-06T23:52:35Z" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"
+
+=== STANDARD DEVIATION ANALYSIS ===
+
+=== Standard Deviation Analysis ===
+
+http_req_duration:
+  Mean: 481.44ms
+  Std Dev: 94.50ms
+  Sample count: 8000
+
+http_req_waiting:
+  Mean: 481.33ms
+  Std Dev: 94.49ms
+  Sample count: 8000
+
+http_req_blocked:
+  Mean: 8.90µs
+  Std Dev: 106.04µs
+  Sample count: 8000
+
+http_req_connecting:
+  Mean: 0.45µs
+  Std Dev: 10.51µs
+  Sample count: 8000
+
+http_req_sending:
+  Mean: 19.09µs
+  Std Dev: 109.34µs
+  Sample count: 8000
+
+http_req_receiving:
+  Mean: 84.76µs
+  Std Dev: 164.22µs
+  Sample count: 8000
+
+iteration_duration:
+  Mean: 483.27ms
+  Std Dev: 94.52ms
+  Sample count: 8000
+

@@ -8,26 +8,23 @@
 // Requests: GET /events → GET /events/:id/ticket_batches (for each event)
 // This demonstrates REST's N+1 problem: 1+N HTTP requests for related data
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS } from '../../../config.js';
 import { restRequest, checkResponse } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 // Note: Tags (api, phase, scenario) are added via CLI by run-test.sh
 export const options = {
-  thresholds: THRESHOLDS.load,
-  // Give the scenario a proper name for better reporting
+  thresholds: THRESHOLDS.phase1_comparison,
+  // Use shared-iterations executor for fair comparison
   scenarios: {
-    'nested-data': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'nested-data': TEST_CONFIG.phase1_comparison.nested_data,
   },
 };
 
 export default function () {
-  // Step 1: Fetch list of events (1 request) - NO PAGINATION in before_optimization phase
+  // Step 1: Fetch list of events (1 request)
+  // REST API returns first 20 events by default (per_page=20)
   const eventsResponse = restRequest('GET', '/events');
   checkResponse(eventsResponse, 200, 'events fetched successfully');
 
@@ -35,23 +32,16 @@ export default function () {
     const eventsData = JSON.parse(eventsResponse.body);
     const events = eventsData.data || eventsData.events || [];
 
-    // Limit to first 10 events in the client (simulating what pagination would do)
-    // But still fetch ALL from server (demonstrating over-fetching before optimization)
-    const limitedEvents = events.slice(0, 10);
-
     // Step 2: Fetch ticket_batches for EACH event (N requests - demonstrating N+1 problem)
     // This is the key difference: REST requires separate HTTP requests for related data
-    limitedEvents.forEach((event) => {
+    events.forEach((event) => {
       const ticketBatchesResponse = restRequest('GET', `/events/${event.id}/ticket_batches`);
       checkResponse(ticketBatchesResponse, 200, `ticket_batches fetched for event ${event.id}`);
     });
 
-    // Total HTTP requests: 1 (events) + N (ticket_batches per event)
+    // Total HTTP requests: 1 (events) + 20 (ticket_batches per event) = 21 requests
     // vs GraphQL: 1 HTTP request for everything
   }
-
-  // Sleep between requests to simulate real user behavior
-  sleep(SLEEP_DURATION.between_requests);
 }
 
 // Setup function (runs once at the start)
@@ -59,7 +49,7 @@ export function setup() {
   console.log('Starting Scenario 2: Nested Data - REST Load Test');
   console.log('Testing: GET /events → GET /events/:id/ticket_batches (N+1 problem)');
   console.log('Expected: 1+N HTTP requests (slower than GraphQL single request)');
-  console.log('Target: 50 VUs for 3 minutes');
+  console.log('Configuration: shared-iterations, 20 VUs, 5000 iterations');
   return {};
 }
 

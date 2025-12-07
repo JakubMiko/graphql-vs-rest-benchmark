@@ -4,19 +4,15 @@
 //
 // This tests real-world usage patterns with mixed read/write operations
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS } from '../../../config.js';
 import { graphqlQuery, checkGraphQLResponse, randomInt } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 export const options = {
-  thresholds: THRESHOLDS.load,
+  thresholds: THRESHOLDS.phase1_comparison,
   scenarios: {
-    'concurrent-users': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'concurrent-users': TEST_CONFIG.phase1_comparison.concurrent_users,
   },
 };
 
@@ -28,7 +24,7 @@ const TEST_USER_PASSWORD = 'password123';
 
 const BROWSE_EVENTS_QUERY = `
   query BrowseEvents {
-    events(first: 100) {
+    events(first: 20) {
       edges {
         node {
           id
@@ -76,17 +72,26 @@ const CREATE_ORDER_MUTATION = `
 
 const MY_ORDERS_QUERY = `
   query MyOrders {
-    myOrders {
-      id
-      status
-      totalPrice
-      quantity
-      tickets {
-        id
+    myOrders(first: 20) {
+      edges {
+        node {
+          id
+          status
+          totalPrice
+          quantity
+          tickets {
+            id
+          }
+          ticketBatch {
+            id
+          }
+        }
       }
-      ticketBatch {
-        id
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
       }
+      totalCount
     }
   }
 `;
@@ -128,7 +133,7 @@ export function setup() {
 
     if (token) {
       console.log('Authentication successful');
-      console.log('Target: 50 VUs for 3 minutes');
+      console.log('Configuration: shared-iterations, 10 VUs, 1000 iterations');
       return { token };
     }
   }
@@ -171,8 +176,6 @@ export default function (data) {
     }
   }
 
-  sleep(SLEEP_DURATION.between_requests);
-
   // Step 2: View event details (pick random event)
   if (events.length > 0) {
     const randomEvent = events[randomInt(0, Math.min(events.length - 1, 20))]; // First 20 events
@@ -195,8 +198,6 @@ export default function (data) {
       const eventData = JSON.parse(eventResponse.body);
       ticketBatches = eventData.data?.event?.ticketBatches || [];
     }
-
-    sleep(SLEEP_DURATION.between_requests);
 
     // Step 3: Create order (authenticated user)
     // Pick a random ticket batch from the event
@@ -232,8 +233,6 @@ export default function (data) {
 
       checkGraphQLResponse(orderResponse);
 
-      sleep(SLEEP_DURATION.between_requests);
-
       // Step 4: View my orders (verify order was created)
       const myOrdersResponse = graphqlQuery(MY_ORDERS_QUERY, {}, token);
 
@@ -248,9 +247,6 @@ export default function (data) {
       checkGraphQLResponse(myOrdersResponse);
     }
   }
-
-  // Sleep before next iteration
-  sleep(SLEEP_DURATION.between_iterations);
 }
 
 export function teardown(data) {

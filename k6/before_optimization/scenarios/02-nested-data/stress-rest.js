@@ -7,7 +7,7 @@
 // Key Metric: At what load does the N+1 problem cause cascading failures?
 
 import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
 import { restRequest, checkResponse } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
@@ -15,10 +15,7 @@ import { handleSummary } from '../../../summary.js';
 export const options = {
   thresholds: THRESHOLDS.stress,  // More lenient thresholds for stress testing
   scenarios: {
-    'nested-data': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.stress,
-    },
+    'nested-data': TEST_CONFIG.stress.nested,
   },
 };
 
@@ -53,7 +50,7 @@ export function setup() {
   console.log('Starting Scenario 2: Nested Data - REST Stress Test');
   console.log('Testing: GET /events → GET /events/:id/ticket_batches (N+1 problem)');
   console.log('Expected: 1+N HTTP requests under increasing load');
-  console.log('Load progression: 50 → 100 → 200 VUs');
+  console.log('Configuration: shared-iterations, 50 VUs, 10000 iterations (stress test)');
   console.log('Goal: Measure how N+1 problem impacts performance at scale');
   return {};
 }

@@ -1,56 +1,50 @@
-// k6/scenarios/04-selective-fields/load-rest.js
-// Scenario 4: Selective Fields - REST Load Test
-// Fetch events - REST returns ALL fields regardless of what we need
+// k6/scenarios/03-selective-fields/load-rest.js
+// Scenario 3: Selective Fields - REST Load Test
+// Fetch events with ALL fields - demonstrates REST's over-fetching problem
 //
-// This demonstrates REST's over-fetching problem.
-// Even though we only need id and name, REST returns all ~10 fields:
-// id, name, description, place, date, category, created_at, updated_at, etc.
+// This demonstrates REST's limitation: the /events endpoint returns ALL fields
+// even though we might only need id and name (like GraphQL does).
+// REST returns all ~10 fields (id, name, description, place, date, category, timestamps, etc.)
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS } from '../../../config.js';
 import { restRequest, checkResponse } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 // Note: Tags (api, phase, scenario) are added via CLI by run-test.sh
 export const options = {
-  thresholds: THRESHOLDS.load,
-  // Give the scenario a proper name for better reporting
+  thresholds: THRESHOLDS.phase1_comparison,
+  // Use shared-iterations executor for fair comparison with GraphQL
   scenarios: {
-    'selective-fields': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'selective-fields': TEST_CONFIG.phase1_comparison.selective_fields,
   },
 };
 
 export default function () {
-  // Execute GET request - REST will return ALL fields
-  // We only need id and name, but we'll get description, date, place, category, timestamps, etc.
-  // Limiting to 100 events for fair comparison with GraphQL
-  // Note: Must explicitly request per_page=100 to match GraphQL's first:100
-  const response = restRequest('GET', '/events?per_page=100');
+  // Fetch first 20 events (matching GraphQL's first: 20)
+  // REST limitation: Returns ALL fields even though we might only need id and name
+  // The API doesn't support field selection - it always returns the full event object
+  const response = restRequest('GET', '/events?page=1&per_page=20');
 
   // Validate response
-  checkResponse(response, 200, 'events fetched successfully');
-
-  // Sleep between requests to simulate real user behavior
-  sleep(SLEEP_DURATION.between_requests);
+  checkResponse(response, 200, 'fetch events successful');
 }
 
 // Setup function (runs once at the start)
 export function setup() {
-  console.log('Starting Scenario 4: Selective Fields - REST Load Test');
-  console.log('Testing: GET /events (returns all fields)');
-  console.log('Expected: Over-fetching - receives all ~10 fields even though only id, name needed');
-  console.log('Target: 50 VUs for 3 minutes');
+  console.log('Starting Scenario 3: Selective Fields - REST Load Test');
+  console.log('Testing: GET /events (returns ALL fields)');
+  console.log('Expected: Higher data transfer due to over-fetching');
+  console.log('Note: REST cannot select specific fields, returns full objects');
+  console.log('Configuration: shared-iterations, 20 VUs, 10000 iterations');
   return {};
 }
 
 // Teardown function (runs once at the end)
 export function teardown(data) {
-  console.log('Scenario 4 (REST) completed');
-  console.log('Check data_received metric - should be 60-80% more than GraphQL');
+  console.log('Scenario 3 (REST) completed');
+  console.log('Check data_received metric - should be 60-80% MORE than GraphQL');
+  console.log('This demonstrates REST over-fetching: all fields returned, not just id+name');
 }
 
 // Export the custom summary handler

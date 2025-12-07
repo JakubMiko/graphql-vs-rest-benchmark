@@ -5,21 +5,17 @@
 // This tests write operation performance, including authentication,
 // validation, and database write operations.
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION, TEST_DATA } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS, TEST_DATA } from '../../../config.js';
 import { graphqlQuery, checkGraphQLResponse, randomInt, randomElement } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 // Note: Tags (api, phase, scenario) are added via CLI by run-test.sh
 export const options = {
-  thresholds: THRESHOLDS.load,
+  thresholds: THRESHOLDS.phase1_comparison,
   // Give the scenario a proper name for better reporting
   scenarios: {
-    'write-operations': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'write-operations': TEST_CONFIG.phase1_comparison.write_operations,
   },
 };
 
@@ -77,7 +73,7 @@ export function setup() {
     if (token) {
       console.log('Authentication successful');
       console.log('Testing: createEvent mutation (admin)');
-      console.log('Target: 50 VUs for 3 minutes');
+      console.log('Configuration: shared-iterations, 20 VUs, 10000 iterations');
       return { token };
     }
   }
@@ -118,9 +114,6 @@ export default function (data) {
 
   // Validate response
   checkGraphQLResponse(response);
-
-  // Sleep between requests to simulate real user behavior
-  sleep(SLEEP_DURATION.between_requests);
 }
 
 // Teardown function (runs once at the end)

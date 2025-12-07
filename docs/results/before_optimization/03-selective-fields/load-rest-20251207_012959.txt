@@ -1,0 +1,225 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     selective-fields
+Test Type:    load
+API:          rest
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/03-selective-fields/load-rest.js
+Timestamp:    2025-12-07 01:29:59
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-12-07T00:29:59Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "03")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+http://localhost:3030/dashboard/snapshot/nGhlQvNNvpOi4ZXb3MZTYEL6ppm3sBCy
+
+================================================================================
+TEST OUTPUT
+================================================================================
+
+running (00m56.0s), 20/20 VUs, 6463 complete and 0 interrupted iterations
+selective-fields   [  65% ] 20 VUs  00m56.0s/10m0s  06463/10000 shared iters
+
+running (00m57.0s), 20/20 VUs, 6567 complete and 0 interrupted iterations
+selective-fields   [  66% ] 20 VUs  00m57.0s/10m0s  06567/10000 shared iters
+
+running (00m58.0s), 20/20 VUs, 6682 complete and 0 interrupted iterations
+selective-fields   [  67% ] 20 VUs  00m58.0s/10m0s  06682/10000 shared iters
+
+running (00m59.0s), 20/20 VUs, 6797 complete and 0 interrupted iterations
+selective-fields   [  68% ] 20 VUs  00m59.0s/10m0s  06797/10000 shared iters
+
+running (01m00.0s), 20/20 VUs, 6916 complete and 0 interrupted iterations
+selective-fields   [  69% ] 20 VUs  01m00.0s/10m0s  06916/10000 shared iters
+
+running (01m01.0s), 20/20 VUs, 7030 complete and 0 interrupted iterations
+selective-fields   [  70% ] 20 VUs  01m01.0s/10m0s  07030/10000 shared iters
+
+running (01m02.0s), 20/20 VUs, 7140 complete and 0 interrupted iterations
+selective-fields   [  71% ] 20 VUs  01m02.0s/10m0s  07140/10000 shared iters
+
+running (01m03.0s), 20/20 VUs, 7259 complete and 0 interrupted iterations
+selective-fields   [  73% ] 20 VUs  01m03.0s/10m0s  07259/10000 shared iters
+
+running (01m04.0s), 20/20 VUs, 7380 complete and 0 interrupted iterations
+selective-fields   [  74% ] 20 VUs  01m04.0s/10m0s  07380/10000 shared iters
+
+running (01m05.0s), 20/20 VUs, 7496 complete and 0 interrupted iterations
+selective-fields   [  75% ] 20 VUs  01m05.0s/10m0s  07496/10000 shared iters
+
+running (01m06.0s), 20/20 VUs, 7600 complete and 0 interrupted iterations
+selective-fields   [  76% ] 20 VUs  01m06.0s/10m0s  07600/10000 shared iters
+
+running (01m07.0s), 20/20 VUs, 7720 complete and 0 interrupted iterations
+selective-fields   [  77% ] 20 VUs  01m07.0s/10m0s  07720/10000 shared iters
+
+running (01m08.0s), 20/20 VUs, 7839 complete and 0 interrupted iterations
+selective-fields   [  78% ] 20 VUs  01m08.0s/10m0s  07839/10000 shared iters
+
+running (01m09.0s), 20/20 VUs, 7959 complete and 0 interrupted iterations
+selective-fields   [  80% ] 20 VUs  01m09.0s/10m0s  07959/10000 shared iters
+
+running (01m10.0s), 20/20 VUs, 8076 complete and 0 interrupted iterations
+selective-fields   [  81% ] 20 VUs  01m10.0s/10m0s  08076/10000 shared iters
+
+running (01m11.0s), 20/20 VUs, 8180 complete and 0 interrupted iterations
+selective-fields   [  82% ] 20 VUs  01m11.0s/10m0s  08180/10000 shared iters
+
+running (01m12.0s), 20/20 VUs, 8300 complete and 0 interrupted iterations
+selective-fields   [  83% ] 20 VUs  01m12.0s/10m0s  08300/10000 shared iters
+
+running (01m13.0s), 20/20 VUs, 8420 complete and 0 interrupted iterations
+selective-fields   [  84% ] 20 VUs  01m13.0s/10m0s  08420/10000 shared iters
+
+running (01m14.0s), 20/20 VUs, 8539 complete and 0 interrupted iterations
+selective-fields   [  85% ] 20 VUs  01m14.0s/10m0s  08539/10000 shared iters
+
+running (01m15.0s), 20/20 VUs, 8649 complete and 0 interrupted iterations
+selective-fields   [  86% ] 20 VUs  01m15.0s/10m0s  08649/10000 shared iters
+
+running (01m16.0s), 20/20 VUs, 8760 complete and 0 interrupted iterations
+selective-fields   [  88% ] 20 VUs  01m16.0s/10m0s  08760/10000 shared iters
+
+running (01m17.0s), 20/20 VUs, 8880 complete and 0 interrupted iterations
+selective-fields   [  89% ] 20 VUs  01m17.0s/10m0s  08880/10000 shared iters
+
+running (01m18.0s), 20/20 VUs, 8992 complete and 0 interrupted iterations
+selective-fields   [  90% ] 20 VUs  01m18.0s/10m0s  08992/10000 shared iters
+
+running (01m19.0s), 20/20 VUs, 9109 complete and 0 interrupted iterations
+selective-fields   [  91% ] 20 VUs  01m19.0s/10m0s  09109/10000 shared iters
+
+running (01m20.0s), 20/20 VUs, 9228 complete and 0 interrupted iterations
+selective-fields   [  92% ] 20 VUs  01m20.0s/10m0s  09228/10000 shared iters
+
+running (01m21.0s), 20/20 VUs, 9339 complete and 0 interrupted iterations
+selective-fields   [  93% ] 20 VUs  01m21.0s/10m0s  09339/10000 shared iters
+
+running (01m22.0s), 20/20 VUs, 9450 complete and 0 interrupted iterations
+selective-fields   [  94% ] 20 VUs  01m22.0s/10m0s  09450/10000 shared iters
+
+running (01m23.0s), 20/20 VUs, 9567 complete and 0 interrupted iterations
+selective-fields   [  96% ] 20 VUs  01m23.0s/10m0s  09567/10000 shared iters
+
+running (01m24.0s), 20/20 VUs, 9686 complete and 0 interrupted iterations
+selective-fields   [  97% ] 20 VUs  01m24.0s/10m0s  09686/10000 shared iters
+
+running (01m25.0s), 20/20 VUs, 9803 complete and 0 interrupted iterations
+selective-fields   [  98% ] 20 VUs  01m25.0s/10m0s  09803/10000 shared iters
+
+running (01m26.0s), 20/20 VUs, 9910 complete and 0 interrupted iterations
+selective-fields   [  99% ] 20 VUs  01m26.0s/10m0s  09910/10000 shared iters
+time="2025-12-07T00:31:26Z" level=info msg="Scenario 4 (REST) completed" source=console
+time="2025-12-07T00:31:26Z" level=info msg="Check data_received metric - should be 60-80% more than GraphQL" source=console
+
+  █ THRESHOLDS
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+    http_req_duration
+    ✓ 'p(95)<500' http_req_duration=202.69ms
+    ✓ 'p(99)<1000' http_req_duration=221.40ms
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 30000   346.15106896118687/s
+    checks_succeeded...................: 100.00% 30000 out of 30000
+    checks_failed......................: 0.00% 0 out of 30000
+
+
+    HTTP
+    http_req_duration.......................................................: avg=172.19ms min=78.74ms med=163.34ms max=261.85ms p(90)=198.79ms p(95)=202.69ms p(99)=221.40ms
+
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=4.12µs min=0.88µs med=2.04µs max=1.06ms p(90)=3.17µs p(95)=3.71µs p(99)=7.21µs
+
+    http_req_connecting (TCP handshake).....................................: avg=0.65µs min=0.00µs med=0.00µs max=503.42µs p(90)=0.00µs p(95)=0.00µs p(99)=0.00µs
+
+    http_req_sending (request upload).......................................: avg=8.32µs min=2.54µs med=6.00µs max=1.28ms p(90)=10.63µs p(95)=13.63µs p(99)=29.09µs
+
+    http_req_waiting (server processing)....................................: avg=172.13ms min=78.70ms med=163.29ms max=261.74ms p(90)=198.72ms p(95)=202.62ms p(99)=221.35ms
+
+    http_req_receiving (response download)..................................: avg=46.80µs min=9.58µs med=38.13µs max=1.97ms p(90)=70.17µs p(95)=84.13µs p(99)=153.32µs
+
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 10000
+    http_reqs...............................................................: 10000  115.383690/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=173.21ms min=79.58ms med=164.42ms max=263.76ms p(90)=199.84ms p(95)=203.70ms p(99)=222.26ms
+
+    iterations..............................................................: 10000  115.383690/s
+    vus.....................................................................: 20      min=20          max=20
+    vus_max.................................................................: 20     min=20         max=20
+
+    NETWORK
+    data_received...........................................................: 165.3 MB 1.9 MB/s
+    data_sent...............................................................: 1.1 MB 13.1 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (01m26.7s), 00/20 VUs, 10000 complete and 0 interrupted iterations
+selective-fields ✓ [ 100% ] 20 VUs  01m26.7s/10m0s  10000/10000 shared iters
+
+=== STANDARD DEVIATION ANALYSIS ===
+
+=== Standard Deviation Analysis ===
+
+http_req_duration:
+  Mean: 172.19ms
+  Std Dev: 17.25ms
+  Sample count: 10000
+
+http_req_waiting:
+  Mean: 172.13ms
+  Std Dev: 17.25ms
+  Sample count: 10000
+
+http_req_blocked:
+  Mean: 4.12µs
+  Std Dev: 39.91µs
+  Sample count: 10000
+
+http_req_connecting:
+  Mean: 0.65µs
+  Std Dev: 15.48µs
+  Sample count: 10000
+
+http_req_sending:
+  Mean: 8.32µs
+  Std Dev: 28.34µs
+  Sample count: 10000
+
+http_req_receiving:
+  Mean: 46.80µs
+  Std Dev: 57.51µs
+  Sample count: 10000
+
+iteration_duration:
+  Mean: 173.21ms
+  Std Dev: 17.26ms
+  Sample count: 10000
+

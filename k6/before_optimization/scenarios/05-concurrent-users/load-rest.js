@@ -4,19 +4,15 @@
 //
 // This tests real-world usage patterns with mixed read/write operations
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS } from '../../../config.js';
 import { restRequest, checkResponse, randomInt } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 export const options = {
-  thresholds: THRESHOLDS.load,
+  thresholds: THRESHOLDS.phase1_comparison,
   scenarios: {
-    'concurrent-users': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'concurrent-users': TEST_CONFIG.phase1_comparison.concurrent_users,
   },
 };
 
@@ -48,7 +44,7 @@ export function setup() {
 
     if (token) {
       console.log('Authentication successful');
-      console.log('Target: 50 VUs for 3 minutes');
+      console.log('Configuration: shared-iterations, 10 VUs, 1000 iterations');
       return { token };
     }
   }
@@ -66,8 +62,8 @@ export default function (data) {
   }
 
   // Step 1: Browse events (anonymous user behavior)
-  // Limit to 100 events for reasonable response size
-  const eventsResponse = restRequest('GET', '/events?per_page=100');
+  // REST API returns first 20 events by default (per_page=20)
+  const eventsResponse = restRequest('GET', '/events');
   checkResponse(eventsResponse, 200, 'browse events successful');
 
   let events = [];
@@ -75,8 +71,6 @@ export default function (data) {
     const eventsData = JSON.parse(eventsResponse.body);
     events = eventsData.data || [];
   }
-
-  sleep(SLEEP_DURATION.between_requests);
 
   // Step 2: View event details (pick random event)
   if (events.length > 0) {
@@ -92,8 +86,6 @@ export default function (data) {
       // Extract ticket batches from included data or relationships
       ticketBatches = eventData.included?.filter(item => item.type === 'ticket_batch') || [];
     }
-
-    sleep(SLEEP_DURATION.between_requests);
 
     // Step 3: Create order (authenticated user)
     // Pick a random ticket batch from the event
@@ -114,16 +106,12 @@ export default function (data) {
 
       checkResponse(orderResponse, 201, 'create order successful');
 
-      sleep(SLEEP_DURATION.between_requests);
-
       // Step 4: View my orders (verify order was created)
-      const myOrdersResponse = restRequest('GET', '/orders', null, token);
+      // Use pagination to limit response size (default: 20 orders per page)
+      const myOrdersResponse = restRequest('GET', '/orders?page=1&per_page=20', null, token);
       checkResponse(myOrdersResponse, 200, 'view my orders successful');
     }
   }
-
-  // Sleep before next iteration
-  sleep(SLEEP_DURATION.between_iterations);
 }
 
 export function teardown(data) {

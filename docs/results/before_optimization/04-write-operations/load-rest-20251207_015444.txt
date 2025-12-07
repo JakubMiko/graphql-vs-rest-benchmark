@@ -1,0 +1,197 @@
+================================================================================
+K6 TEST SUMMARY
+================================================================================
+Scenario:     write-operations
+Test Type:    load
+API:          rest
+Phase:        before_optimization
+Test Script:  k6/before_optimization/scenarios/04-write-operations/load-rest.js
+Timestamp:    2025-12-07 01:54:44
+
+================================================================================
+INFLUXDB QUERY INFORMATION
+================================================================================
+To query this test data in InfluxDB, use:
+
+from(bucket: "k6")
+  |> range(start: 2025-12-07T00:54:44Z, stop: now())
+  |> filter(fn: (r) => r["api"] == "rest")
+  |> filter(fn: (r) => r["phase"] == "before_optimization")
+  |> filter(fn: (r) => r["scenario"] == "04")
+
+InfluxDB URL: http://localhost:8086
+Organization: benchmark
+Bucket: k6
+
+================================================================================
+GRAFANA SNAPSHOT
+================================================================================
+[MANUAL] Add Grafana snapshot link here after test completion:
+
+http://localhost:3030/dashboard/snapshot/qgCAGwU7DqIo6NiD8W9eJDnx9Escripts/run-test.sh0XZxz8
+================================================================================
+TEST OUTPUT
+================================================================================
+
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+     execution: local
+        script: /k6/before_optimization/scenarios/04-write-operations/load-rest.js
+        output: InfluxDBv2 (http://influxdb:8086), json (/results/load-rest-20251207_015444.json)
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 10m30s max duration (incl. graceful stop):
+              * write-operations: 10000 iterations shared among 20 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2025-12-07T00:54:44Z" level=info msg="Starting Scenario 4: Write Operations - REST Load Test" source=console
+time="2025-12-07T00:54:44Z" level=info msg="Authenticating admin test user..." source=console
+time="2025-12-07T00:54:45Z" level=info msg="Authentication successful" source=console
+time="2025-12-07T00:54:45Z" level=info msg="Testing: POST /events (admin)" source=console
+time="2025-12-07T00:54:45Z" level=info msg="Configuration: shared-iterations, 20 VUs, 10000 iterations" source=console
+
+running (00m01.0s), 20/20 VUs, 382 complete and 0 interrupted iterations
+write-operations   [   4% ] 20 VUs  00m00.7s/10m0s  00382/10000 shared iters
+
+running (00m02.0s), 20/20 VUs, 983 complete and 0 interrupted iterations
+write-operations   [  10% ] 20 VUs  00m01.7s/10m0s  00983/10000 shared iters
+
+running (00m03.0s), 20/20 VUs, 1621 complete and 0 interrupted iterations
+write-operations   [  16% ] 20 VUs  00m02.7s/10m0s  01621/10000 shared iters
+
+running (00m04.0s), 20/20 VUs, 2259 complete and 0 interrupted iterations
+write-operations   [  23% ] 20 VUs  00m03.7s/10m0s  02259/10000 shared iters
+
+running (00m05.0s), 20/20 VUs, 2944 complete and 0 interrupted iterations
+write-operations   [  29% ] 20 VUs  00m04.7s/10m0s  02944/10000 shared iters
+
+running (00m06.0s), 20/20 VUs, 3605 complete and 0 interrupted iterations
+write-operations   [  36% ] 20 VUs  00m05.7s/10m0s  03605/10000 shared iters
+
+running (00m07.0s), 20/20 VUs, 4310 complete and 0 interrupted iterations
+write-operations   [  43% ] 20 VUs  00m06.7s/10m0s  04310/10000 shared iters
+
+running (00m08.0s), 20/20 VUs, 5001 complete and 0 interrupted iterations
+write-operations   [  50% ] 20 VUs  00m07.7s/10m0s  05001/10000 shared iters
+
+running (00m09.0s), 20/20 VUs, 5699 complete and 0 interrupted iterations
+write-operations   [  57% ] 20 VUs  00m08.7s/10m0s  05699/10000 shared iters
+
+running (00m10.0s), 20/20 VUs, 6425 complete and 0 interrupted iterations
+write-operations   [  64% ] 20 VUs  00m09.7s/10m0s  06425/10000 shared iters
+
+running (00m11.0s), 20/20 VUs, 7083 complete and 0 interrupted iterations
+write-operations   [  71% ] 20 VUs  00m10.7s/10m0s  07083/10000 shared iters
+
+running (00m12.0s), 20/20 VUs, 7813 complete and 0 interrupted iterations
+write-operations   [  78% ] 20 VUs  00m11.7s/10m0s  07813/10000 shared iters
+
+running (00m13.0s), 20/20 VUs, 8492 complete and 0 interrupted iterations
+write-operations   [  85% ] 20 VUs  00m12.7s/10m0s  08492/10000 shared iters
+
+running (00m14.0s), 20/20 VUs, 9202 complete and 0 interrupted iterations
+write-operations   [  92% ] 20 VUs  00m13.7s/10m0s  09202/10000 shared iters
+
+running (00m15.0s), 20/20 VUs, 9920 complete and 0 interrupted iterations
+write-operations   [  99% ] 20 VUs  00m14.7s/10m0s  09920/10000 shared iters
+time="2025-12-07T00:54:59Z" level=info msg="Scenario 4 (REST) completed" source=console
+time="2025-12-07T00:54:59Z" level=info msg="Note: Test events remain in database for verification" source=console
+
+  █ THRESHOLDS
+
+    http_req_duration
+    ✓ 'p(95)<500' http_req_duration=36.28ms
+    ✓ 'p(99)<1000' http_req_duration=55.58ms
+
+    http_req_failed
+    ✓ 'rate<0.01' http_req_failed=0.00%
+
+
+  █ TOTAL RESULTS
+
+    checks_total.......................: 30000   1985.5562375396305/s
+    checks_succeeded...................: 100.00% 30000 out of 30000
+    checks_failed......................: 0.00% 0 out of 30000
+
+
+    HTTP
+    http_req_duration.......................................................: avg=29.53ms min=16.28ms med=27.94ms max=295.33ms p(90)=33.65ms p(95)=36.28ms p(99)=55.58ms
+
+
+    HTTP Request Timing Breakdown:
+    http_req_blocked (waiting for connection)...............................: avg=2.24µs min=0.75µs med=1.54µs max=1.07ms p(90)=2.50µs p(95)=3.08µs p(99)=6.17µs
+
+    http_req_connecting (TCP handshake).....................................: avg=0.26µs min=0.00µs med=0.00µs max=286.75µs p(90)=0.00µs p(95)=0.00µs p(99)=0.00µs
+
+    http_req_sending (request upload).......................................: avg=7.22µs min=2.75µs med=5.54µs max=1.66ms p(90)=9.54µs p(95)=12.38µs p(99)=25.88µs
+
+    http_req_waiting (server processing)....................................: avg=29.50ms min=16.27ms med=27.90ms max=295.09ms p(90)=33.62ms p(95)=36.25ms p(99)=55.50ms
+
+    http_req_receiving (response download)..................................: avg=27.55µs min=7.29µs med=24.13µs max=1.16ms p(90)=41.54µs p(95)=52.75µs p(99)=96.58µs
+
+
+    HTTP Summary:
+    http_req_failed.........................................................: 0.00%  0 out of 10001
+    http_reqs...............................................................: 10001  661.918264/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=29.61ms min=16.33ms med=28.03ms max=85.55ms p(90)=33.76ms p(95)=36.40ms p(99)=55.58ms
+
+    iterations..............................................................: 10000  661.852079/s
+    vus.....................................................................: 20      min=20          max=20
+    vus_max.................................................................: 20     min=20         max=20
+
+    NETWORK
+    data_received...........................................................: 6.6 MB 450.7 kB/s
+    data_sent...............................................................: 4.0 MB 270.3 kB/s
+
+
+============================================
+Test completed!
+============================================
+
+running (00m15.1s), 00/20 VUs, 10000 complete and 0 interrupted iterations
+write-operations ✓ [ 100% ] 20 VUs  00m14.8s/10m0s  10000/10000 shared iters
+
+=== STANDARD DEVIATION ANALYSIS ===
+
+=== Standard Deviation Analysis ===
+
+http_req_duration:
+  Mean: 29.53ms
+  Std Dev: 5.63ms
+  Sample count: 10001
+
+http_req_waiting:
+  Mean: 29.50ms
+  Std Dev: 5.62ms
+  Sample count: 10001
+
+http_req_blocked:
+  Mean: 2.24µs
+  Std Dev: 13.33µs
+  Sample count: 10001
+
+http_req_connecting:
+  Mean: 0.26µs
+  Std Dev: 6.48µs
+  Sample count: 10001
+
+http_req_sending:
+  Mean: 7.22µs
+  Std Dev: 25.89µs
+  Sample count: 10001
+
+http_req_receiving:
+  Mean: 27.55µs
+  Std Dev: 22.88µs
+  Sample count: 10001
+
+iteration_duration:
+  Mean: 29.61ms
+  Std Dev: 4.98ms
+  Sample count: 10000
+

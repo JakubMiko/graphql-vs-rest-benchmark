@@ -5,31 +5,27 @@
 // This demonstrates GraphQL's selective field fetching vs REST's over-fetching.
 // GraphQL returns only the 2 requested fields, while REST returns all ~10 fields.
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS } from '../../../config.js';
 import { graphqlQuery, checkGraphQLResponse } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 // Note: Tags (api, phase, scenario) are added via CLI by run-test.sh
 export const options = {
-  thresholds: THRESHOLDS.load,
-  // Give the scenario a proper name for better reporting
+  thresholds: THRESHOLDS.phase1_comparison,
+  // Use shared-iterations executor for fair comparison
   scenarios: {
-    'selective-fields': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'selective-fields': TEST_CONFIG.phase1_comparison.selective_fields,
   },
 };
 
 // GraphQL query requesting ONLY id and name fields (2 out of ~10 available fields)
 // This is the key difference: we explicitly request only what we need
-// Limiting to 100 events for fair comparison with REST
+// Limiting to 20 events (realistic first page size)
 // Note: GraphQL uses Relay-style connections (edges/node structure)
 const QUERY = `
   query GetEventsMinimal {
-    events(first: 100) {
+    events(first: 20) {
       edges {
         node {
           id
@@ -46,9 +42,6 @@ export default function () {
 
   // Validate response
   checkGraphQLResponse(response);
-
-  // Sleep between requests to simulate real user behavior
-  sleep(SLEEP_DURATION.between_requests);
 }
 
 // Setup function (runs once at the start)
@@ -56,7 +49,7 @@ export function setup() {
   console.log('Starting Scenario 4: Selective Fields - GraphQL Load Test');
   console.log('Testing: events query with selective fields (id, name only)');
   console.log('Expected: Minimal data transfer, only requested fields returned');
-  console.log('Target: 50 VUs for 3 minutes');
+  console.log('Configuration: shared-iterations, 20 VUs, 10000 iterations');
   return {};
 }
 

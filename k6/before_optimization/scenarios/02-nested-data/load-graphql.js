@@ -8,28 +8,24 @@
 // Query: events { id, name, ticketBatches { id, price, availableTickets } }
 // This demonstrates GraphQL's advantage: one HTTP request for related data
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS } from '../../../config.js';
 import { graphqlQuery, checkGraphQLResponse } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 // Note: Tags (api, phase, scenario) are added via CLI by run-test.sh
 export const options = {
-  thresholds: THRESHOLDS.load,
-  // Give the scenario a proper name for better reporting
+  thresholds: THRESHOLDS.phase1_comparison,
+  // Use shared-iterations executor for fair comparison
   scenarios: {
-    'nested-data': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'nested-data': TEST_CONFIG.phase1_comparison.nested_data,
   },
 };
 
 // GraphQL query for fetching events with their ticket batches (nested data)
 const QUERY = `
   query GetEventsWithTicketBatches {
-    events(first: 10) {
+    events(first: 20) {
       nodes {
         id
         name
@@ -55,9 +51,6 @@ export default function () {
 
   // Validate response
   checkGraphQLResponse(response);
-
-  // Sleep between requests to simulate real user behavior
-  sleep(SLEEP_DURATION.between_requests);
 }
 
 // Setup function (runs once at the start)
@@ -65,7 +58,7 @@ export function setup() {
   console.log('Starting Scenario 2: Nested Data - GraphQL Load Test');
   console.log('Testing: events with ticket_batches query (demonstrates DataLoader batching)');
   console.log('Expected: 1 HTTP request for events + ticket_batches (vs REST: 1+N requests)');
-  console.log('Target: 50 VUs for 3 minutes');
+  console.log('Configuration: shared-iterations, 20 VUs, 5000 iterations');
   return {};
 }
 

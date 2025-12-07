@@ -6,21 +6,17 @@
 // which would add nested data. Users have no required relations, making this
 // a true "simple read" test for baseline performance comparison.
 
-import { sleep } from 'k6';
-import { TEST_STAGES, THRESHOLDS, SLEEP_DURATION } from '../../../config.js';
+import { TEST_CONFIG, THRESHOLDS } from '../../../config.js';
 import { restRequest, checkResponse, randomInt } from '../../../helpers.js';
 import { handleSummary } from '../../../summary.js';
 
 // Test configuration
 // Note: Tags (api, phase, scenario) are added via CLI by run-test.sh
 export const options = {
-  thresholds: THRESHOLDS.load,
-  // Give the scenario a proper name for better reporting
+  thresholds: THRESHOLDS.phase1_comparison,
+  // Use shared-iterations executor for fair comparison
   scenarios: {
-    'simple-read': {
-      executor: 'ramping-vus',
-      stages: TEST_STAGES.load,
-    },
+    'simple-read': TEST_CONFIG.phase1_comparison.simple_read,
   },
 };
 
@@ -33,16 +29,15 @@ export default function () {
 
   // Validate response
   checkResponse(response, 200, 'user fetched successfully');
-
-  // Sleep between requests to simulate real user behavior
-  sleep(SLEEP_DURATION.between_requests);
 }
 
 // Setup function (runs once at the start)
 export function setup() {
   console.log('Starting Scenario 1: Simple Read - REST Load Test');
   console.log('Testing: GET /users/public/:id (no auth, no nested relations)');
-  console.log('Target: 50 VUs for 3 minutes');
+  console.log('Configuration: shared-iterations, 20 VUs, 10000 iterations');
+  console.log('Note: First 1-2 seconds may show cold start (warm-up period)');
+
   return {};
 }
 
