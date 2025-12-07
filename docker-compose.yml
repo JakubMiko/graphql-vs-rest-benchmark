@@ -7,7 +7,7 @@ services:
       - "3000:3000"
     environment:
       - RAILS_ENV=production
-      - DISABLE_CACHE=${DISABLE_CACHE:-false}
+      - DISABLE_CACHE=${DISABLE_CACHE:-true}
       - DATABASE_URL=postgresql://postgres:password@postgres:5432/eventql_graphql
       - DB_HOST=postgres
       - DB_PORT=5432
@@ -45,7 +45,7 @@ services:
       - "3001:3000"
     environment:
       - RAILS_ENV=production
-      - DISABLE_CACHE=${DISABLE_CACHE:-false}
+      - DISABLE_CACHE=${DISABLE_CACHE:-true}
       - DATABASE_URL=postgresql://postgres:password@postgres:5432/eventql_rest
       - DB_HOST=postgres
       - DB_PORT=5432
@@ -145,10 +145,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.0'
-          memory: 1G
+          cpus: '2.0'           # Increased from 1.0 for better flush performance
+          memory: 2G            # Increased from 1G to handle high-throughput tests
         reservations:
-          cpus: '0.5'
+          cpus: '1.0'           # Increased from 0.5
           memory: 256M
     networks:
       - benchmark
