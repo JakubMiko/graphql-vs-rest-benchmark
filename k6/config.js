@@ -6,52 +6,77 @@ export const API_ENDPOINTS = {
   rest: 'http://event-rest:3000/api/v1',
 };
 
-// Test stage configurations
-export const TEST_STAGES = {
-  load: [
-    { duration: '1m', target: 50 },   // Ramp up to 50 VUs
-    { duration: '3m', target: 50 },   // Hold at 50 VUs (plateau)
-    { duration: '1m', target: 0 },    // Ramp down
-  ],
+// ============================================================================
+// TEST CONFIGURATIONS - Phase 1 Comparison (shared-iterations)
+// ============================================================================
 
-  stress: [
-    { duration: '2m', target: 100 },  // Ramp up to 100 VUs (2x load test)
-    { duration: '5m', target: 100 },  // Hold at 100 VUs (longer than load test)
-    { duration: '2m', target: 0 },    // Ramp down
-  ],
+export const TEST_CONFIG = {
+  phase1_comparison: {
+    // Scenario 1: Simple Read
+    simple_read: {
+      executor: 'shared-iterations',
+      vus: 20,
+      iterations: 10000,
+      maxDuration: '10m',
+    },
 
-  spike: [
-    { duration: '30s', target: 20 },  // Normal
-    { duration: '1m', target: 200 },  // SPIKE!
-    { duration: '30s', target: 20 },  // Back to normal
-  ],
+    // Scenario 2: Nested Data
+    nested_data: {
+      executor: 'shared-iterations',
+      vus: 20,
+      iterations: 8000,
+      maxDuration: '10m',
+    },
 
-  soak: [
-    { duration: '5m', target: 50 },   // Ramp up to 50 VUs
-    { duration: '110m', target: 50 }, // Sustained load (2 hours)
-    { duration: '5m', target: 0 },    // Cool down
-  ],
+    // Scenario 3: Selective Fields
+    selective_fields: {
+      executor: 'shared-iterations',
+      vus: 20,
+      iterations: 10000,
+      maxDuration: '10m',
+    },
+
+    // Scenario 4: Write Operations
+    write_operations: {
+      executor: 'shared-iterations',
+      vus: 20,
+      iterations: 10000,
+      maxDuration: '10m',
+    },
+
+    // Scenario 5: Concurrent Users
+    concurrent_users: {
+      executor: 'shared-iterations',
+      vus: 20,
+      iterations: 3000,
+      maxDuration: '20m',
+    },
+  },
 };
 
 // Common thresholds
 export const THRESHOLDS = {
+  phase1_comparison: {
+    'http_req_duration': ['p(95)<500', 'p(99)<1000'],
+    'http_req_failed': ['rate<0.01'],
+  },
+
   load: {
-    'http_req_duration': ['p(95)<500'],      // 95% of requests < 500ms
-    'http_req_failed': ['rate<0.01'],        // Error rate < 1%
+    'http_req_duration': ['p(95)<500'],
+    'http_req_failed': ['rate<0.01'],
   },
 
   stress: {
-    // No hard thresholds - just measure degradation
-    'http_req_duration': ['p(95)<2000'],     // More lenient
+    'http_req_duration': ['p(95)<2000'],
   },
 
   spike: {
-    'http_req_failed': ['rate<0.05'],        // Allow 5% errors during spike
+    'http_req_failed': ['rate<0.05'],
   },
 
   soak: {
-    'http_req_duration': ['p(95)<500'],      // Should maintain performance
-    'http_req_failed': ['rate<0.01'],        // Error rate should stay low
+    'http_req_duration': ['p(95)<500'],
+    'http_req_failed': ['rate<0.01'],
   },
 };
 
@@ -66,10 +91,4 @@ export const HEADERS = {
   json: {
     'Content-Type': 'application/json',
   },
-};
-
-// Sleep durations (in seconds)
-export const SLEEP_DURATION = {
-  between_requests: 1,
-  between_iterations: 2,
 };

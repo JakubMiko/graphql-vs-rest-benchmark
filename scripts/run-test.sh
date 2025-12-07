@@ -94,8 +94,9 @@ echo "  --tag scenario=$SCENARIO_NUM"
 echo "============================================"
 echo ""
 
-# Get absolute path to k6 directory
+# Get absolute paths
 K6_DIR="$(cd "$(dirname "$0")/.." && pwd)/k6"
+RESULTS_DIR_HOST="$(cd "$(dirname "$0")/.." && pwd)/docs/results/$PHASE_NAME/$RESULTS_FOLDER"
 
 # Create metadata header for summary file
 cat > "$SUMMARY_FILE" << EOF
@@ -136,11 +137,16 @@ TEST OUTPUT
 
 EOF
 
+# Prepare JSON export file for std_dev calculation
+JSON_FILE="${RESULTS_DIR}/${TEST_TYPE}-${API}-${TIMESTAMP}.json"
+
 # Run test and capture ONLY the final summary (not continuous output)
+# Also export to JSON for standard deviation calculation
 # This prevents huge files for long-running tests (e.g., 2-hour soak tests)
 docker run --rm -i \
   --network=graphql-vs-rest-benchmark_benchmark \
   -v "$K6_DIR:/k6" \
+  -v "$RESULTS_DIR_HOST:/results" \
   -e K6_INFLUXDB_ORGANIZATION=$INFLUX_ORG \
   -e K6_INFLUXDB_BUCKET=$INFLUX_BUCKET \
   -e K6_INFLUXDB_TOKEN=$INFLUX_TOKEN \
@@ -149,10 +155,21 @@ docker run --rm -i \
   -e K6_INFLUXDB_TAGS_SCENARIO=$SCENARIO_NUM \
   custom-k6:latest run \
   --out xk6-influxdb=$INFLUX_URL \
+  --out json=/results/$(basename "$JSON_FILE") \
+  --summary-trend-stats="min,avg,med,max,p(90),p(95),p(99),p(99.9),count" \
   --tag api=$API \
   --tag phase=$PHASE_NAME \
   --tag scenario=$SCENARIO_NUM \
   /k6/$TEST_SCRIPT 2>&1 | tee /dev/tty | tail -n 150 >> "$SUMMARY_FILE"
+
+# Calculate standard deviation from JSON export
+if [ -f "$JSON_FILE" ]; then
+  echo "" >> "$SUMMARY_FILE"
+  echo "=== STANDARD DEVIATION ANALYSIS ===" >> "$SUMMARY_FILE"
+  node scripts/calculate-stddev.js "$JSON_FILE" >> "$SUMMARY_FILE" 2>&1
+  # Clean up JSON file (can be large)
+  rm "$JSON_FILE"
+fi
 
 # Just show where results were saved (k6's handleSummary already shows "Test completed!")
 echo ""

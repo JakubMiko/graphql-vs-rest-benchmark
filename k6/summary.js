@@ -48,7 +48,14 @@ export function handleSummary(data) {
     customSummary += `med=${formatDuration(metric.values.med)} `;
     customSummary += `max=${formatDuration(metric.values.max)} `;
     customSummary += `p(90)=${formatDuration(metric.values['p(90)'])} `;
-    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])}\n`;
+    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])} `;
+    if (metric.values['p(99)'] !== undefined) {
+      customSummary += `p(99)=${formatDuration(metric.values['p(99)'])}\n`;
+    } else {
+      customSummary += `p(99)=N/A\n`;
+    }
+    // Note: std_dev calculated separately from JSON export (see end of summary)
+    customSummary += `\n`;
   }
 
   // HTTP Request Timing Breakdown
@@ -63,7 +70,14 @@ export function handleSummary(data) {
     customSummary += `med=${formatDuration(metric.values.med)} `;
     customSummary += `max=${formatDuration(metric.values.max)} `;
     customSummary += `p(90)=${formatDuration(metric.values['p(90)'])} `;
-    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])}\n`;
+    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])} `;
+    if (metric.values['p(99)'] !== undefined) {
+      customSummary += `p(99)=${formatDuration(metric.values['p(99)'])}\n`;
+    } else {
+      customSummary += `p(99)=N/A\n`;
+    }
+    // Note: std_dev calculated separately from JSON export (see end of summary)
+    customSummary += `\n`;
   }
 
   // http_req_connecting - TCP connection establishment
@@ -75,7 +89,14 @@ export function handleSummary(data) {
     customSummary += `med=${formatDuration(metric.values.med)} `;
     customSummary += `max=${formatDuration(metric.values.max)} `;
     customSummary += `p(90)=${formatDuration(metric.values['p(90)'])} `;
-    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])}\n`;
+    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])} `;
+    if (metric.values['p(99)'] !== undefined) {
+      customSummary += `p(99)=${formatDuration(metric.values['p(99)'])}\n`;
+    } else {
+      customSummary += `p(99)=N/A\n`;
+    }
+    // Note: std_dev calculated separately from JSON export (see end of summary)
+    customSummary += `\n`;
   }
 
   // http_req_sending - Time sending HTTP request
@@ -87,7 +108,14 @@ export function handleSummary(data) {
     customSummary += `med=${formatDuration(metric.values.med)} `;
     customSummary += `max=${formatDuration(metric.values.max)} `;
     customSummary += `p(90)=${formatDuration(metric.values['p(90)'])} `;
-    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])}\n`;
+    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])} `;
+    if (metric.values['p(99)'] !== undefined) {
+      customSummary += `p(99)=${formatDuration(metric.values['p(99)'])}\n`;
+    } else {
+      customSummary += `p(99)=N/A\n`;
+    }
+    // Note: std_dev calculated separately from JSON export (see end of summary)
+    customSummary += `\n`;
   }
 
   // http_req_waiting - Server processing time
@@ -99,7 +127,14 @@ export function handleSummary(data) {
     customSummary += `med=${formatDuration(metric.values.med)} `;
     customSummary += `max=${formatDuration(metric.values.max)} `;
     customSummary += `p(90)=${formatDuration(metric.values['p(90)'])} `;
-    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])}\n`;
+    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])} `;
+    if (metric.values['p(99)'] !== undefined) {
+      customSummary += `p(99)=${formatDuration(metric.values['p(99)'])}\n`;
+    } else {
+      customSummary += `p(99)=N/A\n`;
+    }
+    // Note: std_dev calculated separately from JSON export (see end of summary)
+    customSummary += `\n`;
   }
 
   // http_req_receiving - Time receiving HTTP response
@@ -111,7 +146,14 @@ export function handleSummary(data) {
     customSummary += `med=${formatDuration(metric.values.med)} `;
     customSummary += `max=${formatDuration(metric.values.max)} `;
     customSummary += `p(90)=${formatDuration(metric.values['p(90)'])} `;
-    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])}\n`;
+    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])} `;
+    if (metric.values['p(99)'] !== undefined) {
+      customSummary += `p(99)=${formatDuration(metric.values['p(99)'])}\n`;
+    } else {
+      customSummary += `p(99)=N/A\n`;
+    }
+    // Note: std_dev calculated separately from JSON export (see end of summary)
+    customSummary += `\n`;
   }
 
   customSummary += '\n    HTTP Summary:\n';
@@ -141,7 +183,14 @@ export function handleSummary(data) {
     customSummary += `med=${formatDuration(metric.values.med)} `;
     customSummary += `max=${formatDuration(metric.values.max)} `;
     customSummary += `p(90)=${formatDuration(metric.values['p(90)'])} `;
-    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])}\n`;
+    customSummary += `p(95)=${formatDuration(metric.values['p(95)'])} `;
+    if (metric.values['p(99)'] !== undefined) {
+      customSummary += `p(99)=${formatDuration(metric.values['p(99)'])}\n`;
+    } else {
+      customSummary += `p(99)=N/A\n`;
+    }
+    // Note: std_dev calculated separately from JSON export (see end of summary)
+    customSummary += `\n`;
   }
 
   // iterations
@@ -215,7 +264,9 @@ function formatBytes(bytes) {
 
 function formatValue(metric, thresholdName) {
   // Extract the metric name from threshold (e.g., "p(95)<500" -> use p(95) value)
-  if (thresholdName.includes('p(95)')) {
+  if (thresholdName.includes('p(99)')) {
+    return formatDuration(metric.values['p(99)']);
+  } else if (thresholdName.includes('p(95)')) {
     return formatDuration(metric.values['p(95)']);
   } else if (thresholdName.includes('rate')) {
     return `${(metric.values.rate * 100).toFixed(2)}%`;
